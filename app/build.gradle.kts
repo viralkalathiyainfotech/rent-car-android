@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -37,6 +38,7 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        buildConfig = true
     }
 }
 
@@ -49,4 +51,83 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // ==================== LIFECYCLE ====================
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.process)
+    implementation(libs.androidx.lifecycle.lifecycle.service)
+
+    // ==================== NAVIGATION ====================
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    // ==================== IMAGE LOADING ====================
+    // Glide
+    implementation(libs.glide)
+    ksp(libs.compiler)
+
+    // Picasso
+    implementation(libs.picasso)
+
+    // Coil (Kotlin-first)
+    implementation(libs.coil)
+
+
+    // ==================== NETWORKING ====================
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.converter.moshi)
+
+    // OkHttp
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+
+    // ==================== JSON PARSING ====================
+    implementation(libs.gson)
+    implementation(libs.moshi.kotlin)
+    ksp(libs.moshi.kotlin.codegen)
+
+    // ==================== COROUTINES ====================
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+
+    // ==================== ROOM DATABASE ====================
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    // ==================== DATASTORE ====================
+    implementation(libs.androidx.datastore.preferences)
+
+    // ==================== HILT (DI) ====================
+//    implementation("com.google.dagger:hilt-android:2.51")
+//    ksp("com.google.dagger:hilt-compiler:2.51")
+
+    // ==================== GOOGLE SERVICES ====================
+    implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
+    implementation(libs.play.services.auth)
+
+    // ==================== WORK MANAGER ====================
+    implementation(libs.androidx.work.runtime.ktx)
+
+    // ==================== UI LIBRARIES ====================
+    // CircleImageView
+    implementation(libs.circleimageview)
+
+    // Lottie Animations
+    implementation(libs.lottie)
+
+    // ViewPager2
+    implementation(libs.androidx.viewpager2)
+
+    // SwipeRefreshLayout
+    implementation(libs.androidx.swiperefreshlayout)
+
+    // SplashScreen
+    implementation(libs.androidx.core.splashscreen)
 }
