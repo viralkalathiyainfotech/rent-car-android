@@ -1,4 +1,4 @@
-package com.example.rentcar.base
+package com.example.rentcar.base.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

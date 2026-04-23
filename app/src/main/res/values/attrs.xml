@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="KnobView">
+        <attr name="kv_min" format="integer"/>
+        <attr name="kv_max" format="integer"/>
+        <attr name="kv_value" format="integer"/>
+        <attr name="kv_label" format="string"/>
+        <attr name="kv_trackColor" format="color"/>
+        <attr name="kv_progressColor" format="color"/>
+        <attr name="kv_bgColor" format="color"/>
+        <attr name="kv_labelColor" format="color"/>
+    </declare-styleable>
+
+<!--    <attr name="themeBackground" format="color" />-->
+<!--    <attr name="toolbarBackground" format="color" />-->
+<!--    <attr name="textPrimary" format="color" />-->
+<!--    <attr name="textSecondary" format="color" />-->
+<!--    <attr name="iconTint" format="color" />-->
+<!--    <attr name="bottomControlsBackground" format="color" />-->
+<!--    <declare-styleable name="PlaybackWaveView">-->
+<!--        <attr name="waveColor" format="color" />-->
+
+<!--    </declare-styleable>-->
+</resources>

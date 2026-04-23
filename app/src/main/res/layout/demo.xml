@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/themeColor"
+    tools:context=".base.fragment.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/frameLay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivCarBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.85"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_image" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_hero_overlay" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:background="#CC111111" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvBadgeNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:letterSpacing="0.08"
+                            android:text="04"
+                            android:textColor="#FFE07B2B"
+                            android:textSize="10sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="10dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="#88FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/tvBadgeLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:letterSpacing="0.15"
+                            android:text="ELECTRIC FUTURE"
+                            android:textColor="#CCFFFFFF"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvHeadline1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="-0.02"
+                        android:lineSpacingMultiplier="0.88"
+                        android:text="SILENT"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="52sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvHeadline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.01"
+                        android:shadowColor="#FFE07B2B"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="1"
+                        android:text="REVOLUTION"
+                        android:textColor="#00000000"
+                        android:textSize="42sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSubtitle"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:lineSpacingMultiplier="1.4"
+                        android:text="The future is here. Sustainable power meets instant torque in our premium electric vehicle category."
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="11sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/btnExploreNow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/bg_btn_orange"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:letterSpacing="0.12"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:text="EXPLORE NOW  →"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="10sp" />
+
+                        <LinearLayout
+                            android:id="@+id/btnEcoPerformance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_btn_border"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:id="@+id/flVolKnob"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginStart="16dp">
+
+                                <com.example.rentcar.base.utils.KnobView
+                                    android:id="@+id/rotaryKnob2"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_gravity="center" />
+
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:letterSpacing="0.10"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="ECO-PERFORMANCE"
+                                android:textColor="#DDFFFFFF"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Bottom feature strip -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingEnd="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginEnd="5dp"
+                                android:src="@drawable/ic_shield"
+                                app:tint="#FFE07B2B" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:letterSpacing="0.10"
+                                android:text="FULL INSURANCE"
+                                android:textColor="#AAFFFFFF"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginEnd="5dp"
+                                android:src="@drawable/ic_location"
+                                app:tint="#FFE07B2B" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:letterSpacing="0.10"
+                                android:text="ANYWHERE DELIVERY"
+                                android:textColor="#AAFFFFFF"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginEnd="5dp"
+                                android:src="@drawable/ic_car"
+                                app:tint="#FFE07B2B" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:letterSpacing="0.10"
+                                android:text="LATEST MODELS"
+                                android:textColor="#AAFFFFFF"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Orange slider indicator dot -->
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="4dp"
+                    android:background="#FFE07B2B" />
+
+            </FrameLayout>
+
+            <!-- 
+                 SECTION 2 — EXPLORE BRANDS (below hero)
+                  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF111111"
+                android:orientation="vertical"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+
+                <!-- Header row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <!-- Left: labels -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:letterSpacing="0.15"
+                            android:text="TOP MANUFACTURES"
+                            android:textColor="#AAFFFFFF"
+                            android:textSize="9sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-black"
+                                android:text="EXPLORE "
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-black"
+                                android:text="BRANDS"
+                                android:textColor="#FFE07B2B"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Orange underline accent -->
+                        <View
+                            android:layout_width="72dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="3dp"
+                            android:background="#FFE07B2B" />
+
+                    </LinearLayout>
+
+                    <!-- Right: ← → arrow buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_arrow_btn"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/btnBrandPrev"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_back_arrow"
+                                android:gravity="center" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_arrow_btn_active"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/btnBrandNext"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_next"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Horizontal scrollable brand cards -->
+                <HorizontalScrollView
+                    android:id="@+id/brandScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/brandsContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- ── CARD 1: LAMBORGHINI (orange) ── -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardLamborghini"
+                            android:layout_width="155dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="#FF1E1E1E"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="4dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="3dp"
+                                    android:background="#FFE07B2B" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <FrameLayout
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        android:layout_marginBottom="10dp">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_brand_initials_box" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="sans-serif-black"
+                                            android:gravity="center"
+                                            android:text="LB"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </FrameLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_badge_orange"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.10"
+                                            android:paddingStart="5dp"
+                                            android:paddingTop="2dp"
+                                            android:paddingEnd="5dp"
+                                            android:paddingBottom="2dp"
+                                            android:text="SPORTS"
+                                            android:textColor="#FFE07B2B"
+                                            android:textSize="7sp" />
+
+                                        <Space
+                                            android:layout_width="0dp"
+                                            android:layout_height="1dp"
+                                            android:layout_weight="1" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="3dp"
+                                            android:text="★"
+                                            android:textColor="#FFF1C40F"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:text="5.0"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="3dp"
+                                        android:fontFamily="sans-serif-black"
+                                        android:text="LAMBORGHINI"
+                                        android:textColor="#FFFFFFFF"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="Expect the Extreme"
+                                        android:textColor="#88FFFFFF"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="#22FFFFFF" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="1 Cars Available"
+                                            android:textColor="#88FFFFFF"
+                                            android:textSize="8sp" />
+
+                                        <TextView
+                                            android:id="@+id/btnExploreLambo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.08"
+                                            android:paddingTop="4dp"
+                                            android:paddingBottom="4dp"
+                                            android:text="EXPLORE  →"
+                                            android:textColor="#FFE07B2B"
+                                            android:textSize="8sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- ── CARD 2: BENTLEY (green) ── -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardBentley"
+                            android:layout_width="155dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="#FF1E1E1E"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="4dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="3dp"
+                                    android:background="#FF2ECC71" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <FrameLayout
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        android:layout_marginBottom="10dp">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_brand_initials_box" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="sans-serif-black"
+                                            android:gravity="center"
+                                            android:text="BE"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </FrameLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_badge_green"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.10"
+                                            android:paddingStart="5dp"
+                                            android:paddingTop="2dp"
+                                            android:paddingEnd="5dp"
+                                            android:paddingBottom="2dp"
+                                            android:text="LUXURY"
+                                            android:textColor="#FF2ECC71"
+                                            android:textSize="7sp" />
+
+                                        <Space
+                                            android:layout_width="0dp"
+                                            android:layout_height="1dp"
+                                            android:layout_weight="1" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="3dp"
+                                            android:text="★"
+                                            android:textColor="#FFF1C40F"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:text="5.0"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="3dp"
+                                        android:fontFamily="sans-serif-black"
+                                        android:text="BENTLEY"
+                                        android:textColor="#FFFFFFFF"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="Power &amp; Refinement"
+                                        android:textColor="#88FFFFFF"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="#22FFFFFF" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="1 Cars Available"
+                                            android:textColor="#88FFFFFF"
+                                            android:textSize="8sp" />
+
+                                        <TextView
+                                            android:id="@+id/btnExploreBentley"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.08"
+                                            android:paddingTop="4dp"
+                                            android:paddingBottom="4dp"
+                                            android:text="EXPLORE  →"
+                                            android:textColor="#FF2ECC71"
+                                            android:textSize="8sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- ── CARD 3: PORSCHE (red) ── -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardPorsche"
+                            android:layout_width="155dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="#FF1E1E1E"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="4dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="3dp"
+                                    android:background="#FFE74C3C" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <FrameLayout
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        android:layout_marginBottom="10dp">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_brand_initials_box" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="sans-serif-black"
+                                            android:gravity="center"
+                                            android:text="PO"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </FrameLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_badge_red"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.10"
+                                            android:paddingStart="5dp"
+                                            android:paddingTop="2dp"
+                                            android:paddingEnd="5dp"
+                                            android:paddingBottom="2dp"
+                                            android:text="SPORTS"
+                                            android:textColor="#FFE74C3C"
+                                            android:textSize="7sp" />
+
+                                        <Space
+                                            android:layout_width="0dp"
+                                            android:layout_height="1dp"
+                                            android:layout_weight="1" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="3dp"
+                                            android:text="★"
+                                            android:textColor="#FFF1C40F"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:text="5.0"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="3dp"
+                                        android:fontFamily="sans-serif-black"
+                                        android:text="PORSCHE"
+                                        android:textColor="#FFFFFFFF"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="Drive Your Dreams"
+                                        android:textColor="#88FFFFFF"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="#22FFFFFF" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="1 Cars Available"
+                                            android:textColor="#88FFFFFF"
+                                            android:textSize="8sp" />
+
+                                        <TextView
+                                            android:id="@+id/btnExplorePorsche"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.08"
+                                            android:paddingTop="4dp"
+                                            android:paddingBottom="4dp"
+                                            android:text="EXPLORE  →"
+                                            android:textColor="#FFE74C3C"
+                                            android:textSize="8sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- ── CARD 4: ASTON MARTIN (yellow) ── -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardAstonMartin"
+                            android:layout_width="155dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="#FF1E1E1E"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="4dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="3dp"
+                                    android:background="#FFF1C40F" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <FrameLayout
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        android:layout_marginBottom="10dp">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_brand_initials_box" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="sans-serif-black"
+                                            android:gravity="center"
+                                            android:text="AM"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </FrameLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_badge_yellow"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.10"
+                                            android:paddingStart="5dp"
+                                            android:paddingTop="2dp"
+                                            android:paddingEnd="5dp"
+                                            android:paddingBottom="2dp"
+                                            android:text="SPORTS"
+                                            android:textColor="#FFF1C40F"
+                                            android:textSize="7sp" />
+
+                                        <Space
+                                            android:layout_width="0dp"
+                                            android:layout_height="1dp"
+                                            android:layout_weight="1" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="3dp"
+                                            android:text="★"
+                                            android:textColor="#FFF1C40F"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:text="5.0"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="3dp"
+                                        android:fontFamily="sans-serif-black"
+                                        android:text="ASTON MARTIN"
+                                        android:textColor="#FFFFFFFF"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="Art of Performance"
+                                        android:textColor="#88FFFFFF"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="#22FFFFFF" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="1 Cars Available"
+                                            android:textColor="#88FFFFFF"
+                                            android:textSize="8sp" />
+
+                                        <TextView
+                                            android:id="@+id/btnExploreAston"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.08"
+                                            android:paddingTop="4dp"
+                                            android:paddingBottom="4dp"
+                                            android:text="EXPLORE  →"
+                                            android:textColor="#FFF1C40F"
+                                            android:textSize="8sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- ── CARD 5: BUGATTI (purple) ── -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardBugatti"
+                            android:layout_width="155dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="#FF1E1E1E"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="4dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="3dp"
+                                    android:background="#FF6C5CE7" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <FrameLayout
+                                        android:layout_width="52dp"
+                                        android:layout_height="52dp"
+                                        android:layout_marginBottom="10dp">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_brand_initials_box" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:fontFamily="sans-serif-black"
+                                            android:gravity="center"
+                                            android:text="BU"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </FrameLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_badge_purple"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.10"
+                                            android:paddingStart="5dp"
+                                            android:paddingTop="2dp"
+                                            android:paddingEnd="5dp"
+                                            android:paddingBottom="2dp"
+                                            android:text="HYPER"
+                                            android:textColor="#FF6C5CE7"
+                                            android:textSize="7sp" />
+
+                                        <Space
+                                            android:layout_width="0dp"
+                                            android:layout_height="1dp"
+                                            android:layout_weight="1" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="3dp"
+                                            android:text="★"
+                                            android:textColor="#FFF1C40F"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:text="5.0"
+                                            android:textColor="#FFFFFFFF"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="3dp"
+                                        android:fontFamily="sans-serif-black"
+                                        android:text="BUGATTI"
+                                        android:textColor="#FFFFFFFF"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="12dp"
+                                        android:text="Perfection of Form"
+                                        android:textColor="#88FFFFFF"
+                                        android:textSize="10sp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="#22FFFFFF" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="1 Cars Available"
+                                            android:textColor="#88FFFFFF"
+                                            android:textSize="8sp" />
+
+                                        <TextView
+                                            android:id="@+id/btnExploreBugatti"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:letterSpacing="0.08"
+                                            android:paddingTop="4dp"
+                                            android:paddingBottom="4dp"
+                                            android:text="EXPLORE  →"
+                                            android:textColor="#FF6C5CE7"
+                                            android:textSize="8sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </LinearLayout>
+            <!-- ═══ END EXPLORE BRANDS ═══ -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

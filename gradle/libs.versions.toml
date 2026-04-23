@@ -20,6 +20,7 @@ lifecycleProcess = "2.10.0"
 lottie = "6.7.1"
 material = "1.13.0"
 activity = "1.13.0"
+sdpAndroid = "1.1.1"
 constraintlayout = "2.2.1"
 moshiKotlin = "1.15.2"
 moshiKotlinCodegen = "1.15.2"
@@ -81,6 +82,9 @@ play-services-auth = { module = "com.google.android.gms:play-services-auth", ver
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+

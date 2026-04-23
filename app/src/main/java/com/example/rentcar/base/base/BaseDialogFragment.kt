@@ -1,18 +1,19 @@
-package com.example.rentcar.base
+package com.example.rentcar.base.base
 
-// base/BaseFragment.kt
+// base/BaseDialogFragment.kt
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.DialogFragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VB : ViewBinding>(
+abstract class BaseDialogFragment<VB : ViewBinding>(
     private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
-) : Fragment() {
+) : DialogFragment() {
 
     private var _binding: VB? = null
     protected val binding get() = _binding!!
@@ -30,19 +31,21 @@ abstract class BaseFragment<VB : ViewBinding>(
         super.onViewCreated(view, savedInstanceState)
         initViews()
         initListeners()
-        initObservers()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
     }
 
     abstract fun initViews()
     abstract fun initListeners()
-    abstract fun initObservers()
 
     fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
-    }
-
-    fun showLongToast(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroyView() {
