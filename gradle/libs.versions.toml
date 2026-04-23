@@ -1,5 +1,8 @@
 [versions]
-agp = "9.1.0"
+agp = "9.2.0"
+#kotlin = "2.3.10"
+devtools_ksp = "2.3.5"
+
 circleimageview = "3.1.0"
 coil = "2.7.0"
 coreKtx = "1.18.0"
@@ -20,14 +23,13 @@ lifecycleProcess = "2.10.0"
 lottie = "6.7.1"
 material = "1.13.0"
 activity = "1.13.0"
-sdpAndroid = "1.1.1"
-sspAndroid = "1.1.1"
 constraintlayout = "2.2.1"
 moshiKotlin = "1.15.2"
 moshiKotlinCodegen = "1.15.2"
 navigationFragmentKtx = "2.9.7"
 navigationUiKtx = "2.9.7"
 okhttp = "5.3.2"
+outlinetextview = "1.0.5"
 picasso = "2.71828"
 playServicesMaps = "20.0.0"
 playServicesLocation = "21.3.0"
@@ -39,6 +41,9 @@ roomRuntime = "2.8.4"
 swiperefreshlayout = "1.2.0"
 viewpager2 = "1.1.0"
 workRuntimeKtx = "2.11.1"
+googleGmsGoogleServices = "4.4.3"
+sdpAndroid = "1.1.1"
+activityKtx = "1.13.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -78,15 +83,21 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshiKotlinCodegen" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+outlinetextview = { module = "com.github.iamBedant:OutlineTextView", version.ref = "outlinetextview" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+
 sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
-ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid" }
+ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sdpAndroid" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+devtools_ksp = { id = "com.google.devtools.ksp", version.ref = "devtools_ksp" }
+builtin_kotlin = { id = "com.android.built-in-kotlin", version.ref = "agp" }
 

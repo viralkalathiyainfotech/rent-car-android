@@ -9,16 +9,8 @@
         <attr name="kv_progressColor" format="color"/>
         <attr name="kv_bgColor" format="color"/>
         <attr name="kv_labelColor" format="color"/>
+    <declare-styleable name="outlineAttrs">
+        <attr name="outlineColor" format="color"/>
+        <attr name="outlineWidth" format="float"/>
     </declare-styleable>
-
-<!--    <attr name="themeBackground" format="color" />-->
-<!--    <attr name="toolbarBackground" format="color" />-->
-<!--    <attr name="textPrimary" format="color" />-->
-<!--    <attr name="textSecondary" format="color" />-->
-<!--    <attr name="iconTint" format="color" />-->
-<!--    <attr name="bottomControlsBackground" format="color" />-->
-<!--    <declare-styleable name="PlaybackWaveView">-->
-<!--        <attr name="waveColor" format="color" />-->
-
-<!--    </declare-styleable>-->
 </resources>
