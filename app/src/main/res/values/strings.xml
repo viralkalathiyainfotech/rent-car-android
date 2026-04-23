@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Rent Car</string>
+    <string name="welcome_back">WELCOME BACK</string>
+    <string name="sign">SIGN</string>
+    <string name="in">IN</string>
+    <string name="sign_in_to_your_account">Sign in to your account</string>
+    <string name="email_address">EMAIL ADDRESS</string>
+    <string name="email">Email</string>
+    <string name="password">PASSWORD</string>
+    <string name="password_small">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="didn_t_have_any_account">Didn’t have any account?</string>
+    <string name="sign_up">Sign UP</string>
+    <string name="join_carrental_to_book_your_dream_car">Join CarRental to book your dream car</string>
+    <string name="account">ACCOUNT</string>
+    <string name="create">CREATE</string>
+    <string name="join_carrental">JOIN CARRENTAL</string>
 </resources>

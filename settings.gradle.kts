@@ -9,6 +9,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 plugins {
@@ -26,3 +27,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Rent Car"
 include(":app")
+//include(":mylibrary")

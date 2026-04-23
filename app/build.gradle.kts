@@ -1,15 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.builtin.kotlin)
+    alias(libs.plugins.devtools.ksp)
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
     namespace = "com.example.rentcar"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.rentcar"
@@ -35,6 +34,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+
     buildFeatures {
         viewBinding = true
         dataBinding = true
@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -51,6 +52,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("com.google.dagger:hilt-android:2.59.2")
+    ksp("com.google.dagger:hilt-android-compiler:2.59.2")
+
+
+//    implementation("com.google.dagger:hilt-android:2.57.1")
+//    ksp("com.google.dagger:hilt-compiler:2.57.1")
 
     // ==================== LIFECYCLE ====================
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -130,4 +138,8 @@ dependencies {
 
     // SplashScreen
     implementation(libs.androidx.core.splashscreen)
+
+
+    implementation(libs.sdp.android)
+    implementation(libs.ssp.android)
 }
