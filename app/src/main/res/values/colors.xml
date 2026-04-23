@@ -3,8 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="themeColor">#FF1A1A1A</color>
-    <color name="themeGrey">#222222</color>
+    <color name="themeGrey">#838280</color>
     <color name="light_grey">#E0E0E0</color>
+    <color name="orange">#FFE07B2B</color>
+    <color name="yellow">#F5A200</color>
+    <color name="green">#FF2ECC71</color>
+    <color name="red">#FFE74C3C</color>
 
 
 </resources>

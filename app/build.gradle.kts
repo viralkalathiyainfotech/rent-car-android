@@ -131,5 +131,6 @@ dependencies {
     // SplashScreen
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.sdp.android)
+    implementation(libs.ssp.android)
 }
 
