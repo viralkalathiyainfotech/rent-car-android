@@ -9,6 +9,7 @@ import com.app.pan.book.utils.SharedPrefManager
 import com.example.rentcar.R
 import com.example.rentcar.base.BaseVMActivity
 import com.example.rentcar.base.utils.NetworkResult
+import com.example.rentcar.base.utils.onClick
 import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.base.utils.startActivityWithFlags
 import com.example.rentcar.databinding.ActivityLoginBinding
@@ -27,13 +28,13 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
 
     override fun initListeners() {
 
-        binding.icLoginBtn.setOnClickListener {
+        binding.icLoginBtn.onClick {
             val email = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
             viewModel.login(email, password)
         }
 
-        binding.icPassword.setOnClickListener {
+        binding.icPassword.onClick {
             isPasswordVisible = !isPasswordVisible
             if (isPasswordVisible) {
                 binding.editPassword.transformationMethod =
@@ -50,14 +51,12 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
             )
         }
 
-        binding.btnSignIn.setOnClickListener {
-
+        binding.btnSignIn.onClick {
             startActivityNormal<CreateAccountActivity>()
         }
 
-        binding.btnForgotPassword.setOnClickListener {
+        binding.btnForgotPassword.onClick {
             startActivityNormal<ForgotPasswordActivity>()
-
         }
     }
 
@@ -87,7 +86,7 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
                     SharedPrefManager(this).userEmail = user.email
 
                     showToast("Welcome, ${user.firstname}!")
-                    Log.d("Sign In : " , "${user.token} , ${user.id} , ${user.email} ")
+                    Log.d("Sign In : ", "${user.token} , ${user.id} , ${user.email} ")
 
 
 

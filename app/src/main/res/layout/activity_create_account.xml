@@ -251,7 +251,7 @@
                         android:background="@drawable/edit_text_bg"
                         android:fontFamily="@font/generalsans_regular"
                         android:hint="Enter your driving license number"
-                        android:inputType="phone"
+                        android:inputType="none"
                         android:paddingHorizontal="@dimen/_6sdp"
                         android:textColor="@color/themeLightText"
                         android:textColorHint="@color/themeLightText"
