@@ -1,0 +1,12 @@
+package com.example.rentcar.ui
+
+import android.app.Application
+import com.example.rentcar.apiService.RetrofitClient
+
+class MyApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+
+        RetrofitClient.init() // 🔥 REQUIRED
+    }
+}

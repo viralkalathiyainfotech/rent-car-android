@@ -20,6 +20,7 @@
         android:minSdkVersion="33" />
 
     <application
+        android:name=".ui.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -30,6 +31,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentCar"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.auth.NewPasswordActivity"
             android:exported="false" />
