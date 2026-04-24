@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    private const val BASE_URL = "http://192.168.29.52:5000/"
+    private const val BASE_URL = "http://192.168.29.226:5000/"
     private lateinit var apiServiceInstance: ApiService
     private const val IMAGE_PATH = "uploads/"
 

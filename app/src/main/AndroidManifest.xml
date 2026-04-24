@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> >
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> -->
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -20,6 +20,7 @@
         android:minSdkVersion="33" />
 
     <application
+        android:name=".ui.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -30,9 +31,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentCar"
         android:usesCleartextTraffic="true">
-
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.NewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.CreateAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
