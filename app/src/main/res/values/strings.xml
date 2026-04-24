@@ -17,4 +17,9 @@
     <string name="account">ACCOUNT</string>
     <string name="create">CREATE</string>
     <string name="join_carrental">JOIN CARRENTAL</string>
+    <string name="home">Home</string>
+    <string name="explore_fleet">Explore Fleet</string>
+    <string name="gallery">Gallery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

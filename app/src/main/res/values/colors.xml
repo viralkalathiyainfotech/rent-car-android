@@ -9,6 +9,9 @@
     <color name="yellow">#F5A200</color>
     <color name="green">#FF2ECC71</color>
     <color name="red">#FFE74C3C</color>
+    <color name="nav">#1F1F1F</color>
+    <color name="navText">#757677</color>
+<!--    <color name="nav">#757677</color>-->
 
 
     <color name="themeLightText">#99FFFFFF</color>

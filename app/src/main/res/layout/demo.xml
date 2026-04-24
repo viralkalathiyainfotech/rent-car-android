@@ -1,492 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/themeColor">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_6sdp"
+    android:background="@drawable/bg_vehicle_card"
+    android:orientation="vertical">
 
-    <ScrollView
+    <!-- Car Image + Category Badge -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbars="none">
+        android:layout_height="@dimen/_120sdp">
 
+        <ImageView
+            android:id="@+id/ivCarImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/dummy_image" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient_card_bottom" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_7sdp"
+            android:background="@drawable/bg_badge_orange"
+            android:fontFamily="@font/general_sans_semibold"
+            android:letterSpacing="0.08"
+            android:paddingStart="5dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="2dp"
+            android:singleLine="true"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/_7ssp"
+            tools:text="SUPERCAR" />
+
+    </FrameLayout>
+
+    <!-- Car Name + Price -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="0dp">
+
+        <TextView
+            android:id="@+id/tvCarName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/general_sans_semibold"
+            android:maxLines="2"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/_11sdp"
+            tools:text="LAMBORGHINI HURACÁN" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/general_sans_semibold"
+                android:textColor="#FFE07B2B"
+                android:textSize="@dimen/_13sdp"
+                tools:text="$900" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/general_sans_medium"
+                android:text="/day"
+                android:textColor="#88FFFFFF"
+                android:textSize="@dimen/_8ssp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        android:background="#22FFFFFF" />
+
+    <!-- Specs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="8dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="0dp">
+
+        <!-- Row 1: Fuel | Transmission -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <FrameLayout
-                android:id="@+id/frameLay"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_250sdp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/ivCarBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.85"
-                    android:contentDescription="TODO"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/dummy_image" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/gradient_hero_overlay" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_gravity="bottom"
-                    android:background="#CC111111" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingStart="10dp"
-                    android:paddingTop="14dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="0dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tvBadgeNumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/general_sans_semibold"
-                            android:letterSpacing="0.08"
-                            android:text="04"
-                            android:textColor="#FFE07B2B"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <View
-                            android:layout_width="2dp"
-                            android:layout_height="@dimen/_12sdp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:background="@color/yellow" />
-
-                        <TextView
-                            android:id="@+id/tvBadgeLabel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/general_sans_semibold"
-                            android:letterSpacing="0.15"
-                            android:text="ELECTRIC FUTURE"
-                            android:textColor="#CCFFFFFF"
-                            android:textSize="@dimen/_11sdp" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tvHeadline1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/general_sans_semibold"
-                        android:letterSpacing="-0.02"
-                        android:lineSpacingMultiplier="0.88"
-                        android:text="SILENT"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="52sp" />
-
-                    <TextView
-                        android:id="@+id/tvHeadline2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/general_sans_semibold"
-                        android:letterSpacing="0.01"
-                        android:shadowColor="#FFE07B2B"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="1"
-                        android:text="REVOLUTION"
-                        android:textColor="#00000000"
-                        android:textSize="42sp" />
-
-                    <TextView
-                        android:id="@+id/tvSubtitle"
-                        android:layout_width="@dimen/_250sdp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        android:text="The future is here. Sustainable power meets instant torque in our premium electric vehicle category."
-                        android:textColor="#CCFFFFFF"
-                        android:textSize="@dimen/_10ssp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/btnExploreNow"
-                            android:layout_width="wrap_content"
-                            android:layout_height="36dp"
-                            android:layout_marginEnd="12dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_btn_orange"
-                            android:drawableRight="@drawable/ic_next"
-                            android:fontFamily="@font/general_sans_semibold"
-                            android:gravity="center"
-                            android:paddingStart="10dp"
-                            android:paddingEnd="10dp"
-                            android:text="EXPLORE NOW   "
-                            android:textColor="#FFFFFFFF"
-                            android:textSize="@dimen/_11ssp" />
-
-                        <LinearLayout
-                            android:id="@+id/btnEcoPerformance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_border_white"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <FrameLayout
-                                android:id="@+id/flVolKnob"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
-                                android:layout_marginStart="8dp">
-
-                                <com.example.rentcar.base.utils.KnobView
-                                    android:id="@+id/rotaryKnob2"
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
-                                    android:layout_gravity="center" />
-
-                            </FrameLayout>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="36dp"
-                                android:layout_marginEnd="12dp"
-                                android:fontFamily="@font/general_sans_semibold"
-                                android:gravity="center"
-                                android:paddingStart="5dp"
-                                android:paddingEnd="5dp"
-                                android:text="ECO-PERFORMANCE"
-                                android:textColor="#FFFFFFFF"
-                                android:textSize="@dimen/_11ssp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:layout_marginEnd="5dp"
-                                android:src="@drawable/ic_shield" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/general_sans_medium"
-                                android:text="FULL INSURANCE"
-                                android:textColor="#AAFFFFFF"
-                                android:textSize="@dimen/_8ssp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:layout_marginEnd="5dp"
-                                android:src="@drawable/ic_location" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/general_sans_medium"
-                                android:singleLine="true"
-                                android:text="ANYWHERE DELIVERY"
-                                android:textColor="#AAFFFFFF"
-                                android:textSize="@dimen/_8ssp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:layout_marginEnd="5dp"
-                                android:src="@drawable/ic_car" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/general_sans_medium"
-                                android:text="LATEST MODELS"
-                                android:textColor="#AAFFFFFF"
-                                android:textSize="@dimen/_8ssp" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_marginBottom="4dp"
-                    android:background="#FFE07B2B" />
-
-            </FrameLayout>
+            android:layout_marginBottom="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#FF111111"
-                android:orientation="vertical"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <!-- ── EXPLORE BRANDS header ── -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@drawable/ic_fuel"
+                    app:tint="#FFE07B2B" />
+
+                <TextView
+                    android:id="@+id/tvFuelType"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp">
+                    android:fontFamily="@font/general_sans_medium"
+                    android:singleLine="true"
+                    android:textColor="#AAFFFFFF"
+                    android:textSize="@dimen/_9ssp"
+                    tools:text="Petrol" />
+            </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:fontFamily="@font/general_sans_medium"
-                            android:letterSpacing="0.15"
-                            android:text="TOP MANUFACTURES"
-                            android:textColor="#FFE07B2B"
-                            android:textSize="@dimen/_10sdp" />
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@drawable/ic_transmission"
+                    app:tint="#FFE07B2B" />
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/general_sans_semibold"
-                                android:text="EXPLORE "
-                                android:textColor="#FFFFFFFF"
-                                android:textSize="@dimen/_18sdp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_5sdp"
-                                android:fontFamily="@font/general_sans_semibold"
-                                android:text="BRANDS"
-                                android:textColor="#FFE07B2B"
-                                android:textSize="@dimen/_18sdp" />
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="72dp"
-                            android:layout_height="2dp"
-                            android:layout_marginTop="3dp"
-                            android:background="#FFE07B2B" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_arrow_btn"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/btnBrandPrev"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:gravity="center"
-                                android:padding="@dimen/_7sdp"
-                                android:src="@drawable/ic_back_arrow" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:background="@drawable/bg_arrow_btn_active"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/btnBrandNext"
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:gravity="center"
-                                android:padding="@dimen/_7sdp"
-                                android:src="@drawable/ic_next" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- ── Brands horizontal RecyclerView ── -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvBrands"
-                    android:layout_width="match_parent"
+                <!-- ✅ singleLine + ellipsize fixes "Automat\nic" wrap -->
+                <TextView
+                    android:id="@+id/tvTransmission"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_5sdp"
-                    android:layout_marginTop="14dp"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_brand_card" />
-
-                <!-- ── FEATURED VEHICLES header ── -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:fontFamily="@font/general_sans_medium"
-                            android:letterSpacing="0.15"
-                            android:text="PREMIUM FLEET"
-                            android:textColor="#FFE07B2B"
-                            android:textSize="@dimen/_10sdp" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/general_sans_semibold"
-                                android:text="FEATURED"
-                                android:textColor="#FFFFFFFF"
-                                android:textSize="@dimen/_18sdp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_5sdp"
-                                android:fontFamily="@font/general_sans_semibold"
-                                android:text="VEHICLES"
-                                android:textColor="#FFE07B2B"
-                                android:textSize="@dimen/_18sdp" />
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="72dp"
-                            android:layout_height="2dp"
-                            android:layout_marginTop="3dp"
-                            android:background="#FFE07B2B" />
-
-                    </LinearLayout>
-
-                    <!-- View All Fleet -->
-                    <LinearLayout
-                        android:id="@+id/btnViewAllFleet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/general_sans_semibold"
-                            android:text="View All Fleet"
-                            android:textColor="@color/themeGrey"
-                            android:textSize="@dimen/_11sdp" />
-                        <ImageView
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
-                            android:layout_marginStart="4dp"
-                            android:src="@drawable/ic_next"
-                            app:tint="#FFE07B2B" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <!-- ── Featured Vehicles GRID RecyclerView ── -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvVehicles"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginEnd="@dimen/_8sdp"
-                    android:nestedScrollingEnabled="false"
-                    app:spanCount="2"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    tools:listitem="@layout/item_vehicle_card" />
-
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:singleLine="true"
+                    android:textColor="#AAFFFFFF"
+                    android:textSize="@dimen/_9ssp"
+                    tools:text="Automatic" />
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
 
-</RelativeLayout>
+        <!-- Row 2: Seats | Acceleration -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@drawable/ic_seat"
+                    app:tint="#FFE07B2B" />
+
+                <TextView
+                    android:id="@+id/tvSeats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:singleLine="true"
+                    android:textColor="#AAFFFFFF"
+                    android:textSize="@dimen/_9ssp"
+                    tools:text="2 Seater" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginEnd="3dp"
+                    android:src="@drawable/ic_speed"
+                    app:tint="#FFE07B2B" />
+
+                <TextView
+                    android:id="@+id/tvAcceleration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:singleLine="true"
+                    android:textColor="#AAFFFFFF"
+                    android:textSize="@dimen/_9ssp"
+                    tools:text="2.9 sec" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ACTION BUTTONS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/btnRentNow"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_orange"
+            android:fontFamily="@font/general_sans_semibold"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:singleLine="true"
+            android:text="RENT NOW"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/_9ssp" />
+
+        <TextView
+            android:id="@+id/btnDetails"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_white"
+            android:fontFamily="@font/general_sans_semibold"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:singleLine="true"
+            android:text="DETAILS"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/_9ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>

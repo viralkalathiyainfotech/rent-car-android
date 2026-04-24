@@ -12,10 +12,6 @@ import androidx.core.widget.AutoSizeableTextView
 import com.example.rentcar.R
 
 
-/**
- * Created by @iamBedant on 05/01/18.
- */
-
 @SuppressLint("RestrictedApi")
 class OutlineTextView : AppCompatTextView, AutoSizeableTextView {
 

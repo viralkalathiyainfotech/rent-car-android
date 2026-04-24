@@ -9,8 +9,12 @@
         <attr name="kv_progressColor" format="color"/>
         <attr name="kv_bgColor" format="color"/>
         <attr name="kv_labelColor" format="color"/>
+
+    </declare-styleable>
+
     <declare-styleable name="outlineAttrs">
         <attr name="outlineColor" format="color"/>
         <attr name="outlineWidth" format="float"/>
     </declare-styleable>
+
 </resources>

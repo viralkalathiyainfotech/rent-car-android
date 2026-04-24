@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/themeColor"
-    tools:context=".base.ui.fragment.ExploreFleetFragment">
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragment.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -153,20 +154,6 @@
                             android:background="@drawable/bg_border_white"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
-
-                            <FrameLayout
-                                android:id="@+id/flVolKnob"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
-                                android:layout_marginStart="8dp">
-
-                                <com.example.rentcar.base.utils.KnobView
-                                    android:id="@+id/rotaryKnob2"
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
-                                    android:layout_gravity="center" />
-
-                            </FrameLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -427,7 +414,7 @@
                                 android:fontFamily="@font/general_sans_semibold"
                                 android:text="FEATURED"
                                 android:textColor="#FFFFFFFF"
-                                android:textSize="@dimen/_18sdp" />
+                                android:textSize="@dimen/_16sdp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -436,7 +423,7 @@
                                 android:fontFamily="@font/general_sans_semibold"
                                 android:text="VEHICLES"
                                 android:textColor="#FFE07B2B"
-                                android:textSize="@dimen/_18sdp" />
+                                android:textSize="@dimen/_16sdp" />
                         </LinearLayout>
 
                         <View
