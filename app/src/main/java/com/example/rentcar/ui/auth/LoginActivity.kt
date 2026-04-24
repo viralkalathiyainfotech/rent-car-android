@@ -80,15 +80,19 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
 
                     val user = result.data
 
-                    // ── Save token + user info ─────────────
-                    SharedPrefManager(this).token = user.token
-                    SharedPrefManager(this).userId = user.id
-                    SharedPrefManager(this).userEmail = user.email
+                    // ── Save user data to SharedPref ──────────────────
+                    val pref = SharedPrefManager.getInstance(this)
+                    pref.token = user.token
+                    pref.userId = user.id
+                    pref.userEmail = user.email
+                    pref.userName = "${user.firstname} ${user.lastname}"
+                    pref.isLoggedIn = true
 
+                    Log.d(
+                        "LoginActivity",
+                        "token=${user.token} | id=${user.id} | email=${user.email}"
+                    )
                     showToast("Welcome, ${user.firstname}!")
-                    Log.d("Sign In : ", "${user.token} , ${user.id} , ${user.email} ")
-
-
 
                     startActivityWithFlags<MainActivity>(
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or

@@ -23,4 +23,10 @@
     <string name="confirm_password">CONFIRM PASSWORD</string>
     <string name="confirm_your_password">Confirm your password</string>
     <string name="reset_password">RESET PASSWORD</string>
+    <string name="back_to_login">BACK TO LOGIN</string>
+    <string name="please_check_your_email">. Please check your email.</string>
+    <string name="ram_gmail_com">ram@gmail.com</string>
+    <string name="we_ve_sent_password_reset_to_link_to">We\'ve sent password reset to link to</string>
+    <string name="email_sent">EMAIL SENT!</string>
+    <string name="sent_reset_link">SENT RESET LINK</string>
 </resources>

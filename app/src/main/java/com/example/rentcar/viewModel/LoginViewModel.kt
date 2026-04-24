@@ -16,12 +16,10 @@ class LoginViewModel : ViewModel() {
     private val _loginState = MutableLiveData<NetworkResult<RegisterUserResponse>>()
     val loginState: LiveData<NetworkResult<RegisterUserResponse>> = _loginState
 
-    // ─────────────────────────────────────────────────────
-    // Login — validate then call API
-    // ─────────────────────────────────────────────────────
+
     fun login(email: String, password: String) {
 
-        // ── Input validation ──────────────────────────────
+
         if (email.isBlank()) {
             _loginState.value = NetworkResult.Error("Email is required")
             return
@@ -39,7 +37,7 @@ class LoginViewModel : ViewModel() {
             return
         }
 
-        // ── Show loading → call API ───────────────────────
+
         _loginState.value = NetworkResult.Loading
 
         viewModelScope.launch {

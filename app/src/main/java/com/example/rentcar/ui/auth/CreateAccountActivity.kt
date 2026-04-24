@@ -25,12 +25,12 @@ class CreateAccountActivity :
 
     override fun initListeners() {
 
-        // ── Sign in redirect ──────────────────────────────
+
         binding.btnSignIn.onClick {
             startActivityNormal<MainActivity>()
         }
 
-        // ── Toggle password visibility ────────────────────
+
         binding.icPassword.onClick {
             isPasswordVisible = !isPasswordVisible
             binding.editPassword.transformationMethod =
@@ -55,7 +55,7 @@ class CreateAccountActivity :
             )
         }
 
-        // ── Create account button ─────────────────────────
+
         binding.icLoginBtn.onClick {
             if (!binding.checkBox.isChecked) {
                 showToast("Please accept the Terms of Service and Privacy Policy")
@@ -72,12 +72,12 @@ class CreateAccountActivity :
             )
         }
 
-        // ── Optional links ────────────────────────────────
+
         binding.textTerms.onClick {
-            showToast("Terms of Service")   // replace with navigation/WebView
+            showToast("Terms of Service")
         }
         binding.textPrivacy.onClick {
-            showToast("Privacy Policy")     // replace with navigation/WebView
+            showToast("Privacy Policy")
         }
     }
 

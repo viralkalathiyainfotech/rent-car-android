@@ -25,7 +25,7 @@ class RegisterViewModel : ViewModel() {
         password: String,
         confirmPassword: String
     ) {
-        // ── Validation ────────────────────────────────────
+
         if (firstname.isBlank()) {
             _registerState.value = NetworkResult.Error("First name is required")
             return
@@ -83,7 +83,7 @@ class RegisterViewModel : ViewModel() {
             return
         }
 
-        // ── Loading → API call ────────────────────────────
+
         _registerState.value = NetworkResult.Loading
 
         viewModelScope.launch {
