@@ -1,4 +1,4 @@
-package com.example.rentcar.ui
+package com.example.rentcar.ui.auth
 
 import com.example.rentcar.base.BaseActivity
 import com.example.rentcar.base.utils.onClick

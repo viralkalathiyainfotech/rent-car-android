@@ -17,4 +17,10 @@
     <string name="account">ACCOUNT</string>
     <string name="create">CREATE</string>
     <string name="join_carrental">JOIN CARRENTAL</string>
+    <string name="security">SECURITY</string>
+    <string name="please_enter_your_new_password">Please enter your new password.</string>
+    <string name="enter_new_password">Enter new password</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="confirm_your_password">Confirm your password</string>
+    <string name="reset_password">RESET PASSWORD</string>
 </resources>
