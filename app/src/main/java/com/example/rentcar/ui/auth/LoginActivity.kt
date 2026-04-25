@@ -94,7 +94,7 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
                     binding.progressBar.visibility = View.GONE
                     binding.txtLogin.visibility    = View.VISIBLE
                     binding.icLoginBtn.isEnabled   = true
-
+                    Log.e("LoginError", "Error: ${result.message}")
                     showToast(result.message)
                 }
             }

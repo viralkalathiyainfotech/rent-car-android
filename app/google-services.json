@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "898443947121",
+    "project_id": "music-creator-ef880",
+    "storage_bucket": "music-creator-ef880.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898443947121:android:8d9695bb96f5daec693fd0",
+        "android_client_info": {
+          "package_name": "com.example.rentcar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898443947121-gnsg0qsbsa0litfu2ep5qfjs1ga6iacv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rentcar",
+            "certificate_hash": "5c4f0a582c6981ef7467e373bf5fa2d4cc098822"
+          }
+        },
+        {
+          "client_id": "898443947121-srmng80rqcijoo1e9gct9ucnc6ckhqn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8dA3fTSk7UKihd-kof7bJjOsJxgeSKrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898443947121-srmng80rqcijoo1e9gct9ucnc6ckhqn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 package com.example.rentcar.ui.auth
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -43,8 +44,11 @@ class LoginViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val response = repository.loginUser(email.trim(), password.trim())
+                Log.d("LoginVM", "Success: $response")
                 _loginState.postValue(UiState.Success(response))
             } catch (e: Exception) {
+                Log.e("LoginVM", "Exception: ${e.message}")    // ← shu error aave 6?
+                Log.e("LoginVM", "Cause: ${e.cause}")
                 _loginState.postValue(UiState.Error(e.message ?: "Unknown error"))
             }
         }

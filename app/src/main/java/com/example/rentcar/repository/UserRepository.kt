@@ -5,8 +5,10 @@ import com.example.rentcar.base.utils.UiState
 import com.example.rentcar.model.home.BrandResponseModel
 import com.example.rentcar.model.home.CarResponseModel
 import com.example.rentcar.model.login.LoginResponse
-import com.example.rentcar.model.login.RegisterUserResponse
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.rentcar.model.login.RegisterResponseModel
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import javax.inject.Inject
 
 class UserRepository @Inject constructor( private val apiService: ApiService){
@@ -17,6 +19,7 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
         )
         return apiService.loginUser(credentials)
     }
+
     suspend fun registerUser(
         firstname: String,
         lastname: String,
@@ -24,14 +27,14 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
         phone: String,
         licenceNo: String,
         password: String
-    ): RegisterUserResponse {
+    ): RegisterResponseModel {
         val requestBody = mapOf(
-            "firstName" to firstname,
-            "lastName" to lastname,
-            "email" to email,
-            "phoneNumber" to phone,
-            "licenceNo" to licenceNo,
-            "password" to password
+            "firstname"  to firstname,
+            "lastname"   to lastname,
+            "email"      to email,
+            "phone"      to phone,
+            "licenceNo"  to licenceNo,
+            "password"   to password
         )
         return apiService.registerUser(requestBody)
     }

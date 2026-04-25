@@ -2,6 +2,7 @@ package com.example.rentcar.ui.auth
 
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.View
 import com.example.rentcar.R
 import com.example.rentcar.base.BaseVMActivity
@@ -57,7 +58,7 @@ class CreateAccountActivity :
             )
         }
 
-        // ── Create account button ─────────────────────────
+        // ── Create account button 
         binding.icLoginBtn.onClick {
             if (!binding.checkBox.isChecked) {
                 showToast("Please accept the Terms of Service and Privacy Policy")
@@ -74,12 +75,12 @@ class CreateAccountActivity :
             )
         }
 
-        // ── Optional links ────────────────────────────────
+        // ── Optional links ───────
         binding.textTerms.onClick {
-            showToast("Terms of Service")   // replace with navigation/WebView
+            showToast("Terms of Service")
         }
         binding.textPrivacy.onClick {
-            showToast("Privacy Policy")     // replace with navigation/WebView
+            showToast("Privacy Policy")
         }
     }
 
@@ -96,6 +97,8 @@ class CreateAccountActivity :
                     binding.progressBar.visibility = View.GONE
                     binding.icRegisterBtn.visibility = View.VISIBLE
                     binding.icLoginBtn.isEnabled = true
+                    Log.e("LoginSuccess", "Error: ${result.data}")
+
                     showToast("Account created successfully!")
                     startActivityNormal<LoginActivity>()
                     finish()
@@ -105,6 +108,8 @@ class CreateAccountActivity :
                     binding.progressBar.visibility = View.GONE
                     binding.icRegisterBtn.visibility = View.VISIBLE
                     binding.icLoginBtn.isEnabled = true
+                    Log.e("LoginError", "Error: ${result.message}")
+
                     showToast(result.message)
                 }
             }
