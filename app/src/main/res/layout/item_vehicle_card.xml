@@ -11,7 +11,10 @@
     <!-- Car Image + Category Badge -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_120sdp">
+        android:layout_height="@dimen/_120sdp"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:background="@drawable/bg_image_top_round">
 
         <ImageView
             android:id="@+id/ivCarImage"
