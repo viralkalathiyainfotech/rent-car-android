@@ -7,6 +7,9 @@ import com.example.rentcar.base.ui.fragment.ExploreFleetFragment
 import com.example.rentcar.base.ui.fragment.GalleryFragment
 import com.example.rentcar.databinding.ActivityMainBinding
 import com.example.rentcar.ui.fragment.HomeFragment
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 

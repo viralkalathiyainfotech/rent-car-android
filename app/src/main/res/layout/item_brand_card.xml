@@ -26,8 +26,8 @@
             android:padding="12dp">
 
             <FrameLayout
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_marginBottom="10dp">
 
                 <View
@@ -41,7 +41,10 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/general_sans_semibold"
                     android:gravity="center"
-                    android:text="LB"
+                    android:text="Fortuner"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:ellipsize="marquee"
+                    android:singleLine="true"
                     android:textColor="#FFFFFFFF"
                     android:textSize="16sp" />
             </FrameLayout>

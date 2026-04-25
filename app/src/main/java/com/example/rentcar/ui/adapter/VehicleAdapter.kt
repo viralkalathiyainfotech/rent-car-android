@@ -6,17 +6,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.rentcar.R
-import com.example.rentcar.model.home.VehicleModel
+import com.example.rentcar.model.home.CarResponseModel.CarResponseModelItem
 
 class VehicleAdapter(
-    private val list: List<VehicleModel>,
-    private val onRentNow: (VehicleModel) -> Unit,
-    private val onDetails: (VehicleModel) -> Unit
+    private var list: List<CarResponseModelItem>,
+    private val onRentNow: (CarResponseModelItem) -> Unit,
+    private val onDetails: (CarResponseModelItem) -> Unit
 ) : RecyclerView.Adapter<VehicleAdapter.VH>() {
 
     inner class VH(view: View) : RecyclerView.ViewHolder(view) {
-        // Exact IDs from item_vehicle_card.xml
         val ivCarImage: ImageView    = view.findViewById(R.id.ivCarImage)
         val tvCategory: TextView     = view.findViewById(R.id.tvCategory)
         val tvCarName: TextView      = view.findViewById(R.id.tvCarName)
@@ -40,16 +40,25 @@ class VehicleAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val item = list[position]
 
-        holder.ivCarImage.setImageResource(item.imageRes)
+        Glide.with(holder.itemView.context)
+            .load(item.image)
+            .placeholder(R.drawable.dummy_image)
+            .into(holder.ivCarImage)
+
         holder.tvCategory.text     = item.category
-        holder.tvCarName.text      = item.carName
-        holder.tvPrice.text        = item.price
-        holder.tvFuelType.text     = item.fuelType
-        holder.tvTransmission.text = item.transmission
-        holder.tvSeats.text        = item.seats
-        holder.tvAcceleration.text = item.speed
+        holder.tvCarName.text      = item.name
+        holder.tvPrice.text        = "$${item.pricePerDay}/day"
+        holder.tvFuelType.text     = item.specs.fuel
+        holder.tvTransmission.text = item.specs.transmission
+        holder.tvSeats.text        = item.specs.seating
+        holder.tvAcceleration.text = item.specs.acceleration
 
         holder.btnRentNow.setOnClickListener { onRentNow(item) }
         holder.btnDetails.setOnClickListener { onDetails(item) }
+    }
+
+    fun updateList(newList: List<CarResponseModelItem>) {
+        list = newList
+        notifyDataSetChanged()
     }
 }

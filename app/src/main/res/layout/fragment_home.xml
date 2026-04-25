@@ -268,7 +268,6 @@
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp">
 
-                <!-- ── EXPLORE BRANDS header ── -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -365,7 +364,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- ── Brands horizontal RecyclerView ── -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvBrands"
                     android:layout_width="match_parent"
@@ -377,7 +375,6 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_brand_card" />
 
-                <!-- ── FEATURED VEHICLES header ── -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -434,7 +431,6 @@
 
                     </LinearLayout>
 
-                    <!-- View All Fleet -->
                     <LinearLayout
                         android:id="@+id/btnViewAllFleet"
                         android:layout_width="wrap_content"
@@ -459,7 +455,6 @@
 
                 </LinearLayout>
 
-                <!-- ── Featured Vehicles GRID RecyclerView ── -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvVehicles"
                     android:layout_width="match_parent"
