@@ -1,48 +1,56 @@
 package com.example.rentcar.ui.auth
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.rentcar.base.utils.NetworkResult
-import com.example.rentcar.model.login.RegisterUserResponse
+import com.example.rentcar.base.BaseViewModel
+import com.example.rentcar.base.utils.UiState
+import com.example.rentcar.model.login.LoginResponse   // ← LoginResponse use karo
 import com.example.rentcar.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel : ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val repository: UserRepository
+) : BaseViewModel() {
 
-    private val repository = UserRepository()
-
-    private val _loginState = MutableLiveData<NetworkResult<RegisterUserResponse>>()
-    val loginState: LiveData<NetworkResult<RegisterUserResponse>> = _loginState
-
+    private val _loginState = MutableLiveData<UiState<LoginResponse>>()
+    val loginState: LiveData<UiState<LoginResponse>> = _loginState
 
     fun login(email: String, password: String) {
 
-
         if (email.isBlank()) {
-            _loginState.value = NetworkResult.Error("Email is required")
+            _loginState.value = UiState.Error("Email is required")
             return
         }
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _loginState.value = NetworkResult.Error("Enter a valid email address")
+            _loginState.value = UiState.Error("Enter a valid email address")
             return
         }
         if (password.isBlank()) {
-            _loginState.value = NetworkResult.Error("Password is required")
+            _loginState.value = UiState.Error("Password is required")
             return
         }
         if (password.length < 6) {
-            _loginState.value = NetworkResult.Error("Password must be at least 6 characters")
+            _loginState.value = UiState.Error("Password must be at least 6 characters")
             return
         }
 
-
-        _loginState.value = NetworkResult.Loading
+        _loginState.value = UiState.Loading
 
         viewModelScope.launch {
-            val result = repository.loginUser(email.trim(), password.trim())
-            _loginState.postValue(result)
+            try {
+                val response = repository.loginUser(email.trim(), password.trim())
+                Log.d("LoginVM", "Success: $response")
+                _loginState.postValue(UiState.Success(response))
+            } catch (e: Exception) {
+                Log.e("LoginVM", "Exception: ${e.message}")    // ← shu error aave 6?
+                Log.e("LoginVM", "Cause: ${e.cause}")
+                _loginState.postValue(UiState.Error(e.message ?: "Unknown error"))
+            }
         }
     }
 }

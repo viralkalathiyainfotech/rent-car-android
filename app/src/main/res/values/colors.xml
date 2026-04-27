@@ -2,9 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="orange">#E06A1B</color>
+    <color name="themeColor">#FF1A1A1A</color>
+    <color name="themeGrey">#838280</color>
+    <color name="light_grey">#E0E0E0</color>
+    <color name="orange">#FFE07B2B</color>
+    <color name="yellow">#F5A200</color>
+    <color name="green">#FF2ECC71</color>
+    <color name="red">#FFE74C3C</color>
+    <color name="nav">#1F1F1F</color>
+    <color name="navText">#757677</color>
+<!--    <color name="nav">#757677</color>-->
+
+
     <color name="themeLightText">#99FFFFFF</color>
     <color name="themeGrey">#222222</color>
     <color name="checkbox">#A1A1A1</color>
-    <color name="themeColor">#141414</color>
 </resources>

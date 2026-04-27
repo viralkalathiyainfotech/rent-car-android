@@ -4,7 +4,6 @@ package com.example.rentcar.base
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 
 abstract class BaseViewHolder<T>(
     itemView: View

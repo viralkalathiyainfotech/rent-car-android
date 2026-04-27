@@ -1,7 +1,5 @@
 package com.example.rentcar.base
 
-// base/BaseActivity.kt
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast

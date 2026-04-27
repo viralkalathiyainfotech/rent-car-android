@@ -1,0 +1,29 @@
+package com.example.rentcar.ui.auth
+import com.example.rentcar.base.BaseActivity
+import com.example.rentcar.base.utils.onClick
+import com.example.rentcar.base.utils.startActivityNormal
+import com.example.rentcar.databinding.ActivityForgotPasswordBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+
+class ForgotPasswordActivity :
+    BaseActivity<ActivityForgotPasswordBinding>(ActivityForgotPasswordBinding::inflate) {
+
+
+    override fun initViews() {
+
+        binding.btnSignIn.onClick {
+            startActivityNormal<LoginActivity>()
+        }
+    }
+
+    override fun initListeners() {
+
+    }
+
+    override fun initObservers() {
+
+    }
+
+}

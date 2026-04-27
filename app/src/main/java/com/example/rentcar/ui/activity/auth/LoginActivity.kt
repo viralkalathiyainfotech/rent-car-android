@@ -1,4 +1,4 @@
-package com.example.rentcar.ui.activity.auth
+package com.example.rentcar.ui.auth
 
 import android.content.Intent
 import android.text.method.HideReturnsTransformationMethod
@@ -8,14 +8,15 @@ import android.view.View
 import com.app.pan.book.utils.SharedPrefManager
 import com.example.rentcar.R
 import com.example.rentcar.base.BaseVMActivity
-import com.example.rentcar.base.utils.NetworkResult
+import com.example.rentcar.base.utils.UiState
 import com.example.rentcar.base.utils.onClick
 import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.base.utils.startActivityWithFlags
 import com.example.rentcar.databinding.ActivityLoginBinding
 import com.example.rentcar.ui.activity.MainActivity
-import com.example.rentcar.ui.auth.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint   // ← add this import
 
+@AndroidEntryPoint
 class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
     ActivityLoginBinding::inflate,
     LoginViewModel::class.java
@@ -23,14 +24,12 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
 
     private var isPasswordVisible = false
 
-    override fun initViews() {
-
-    }
+    override fun initViews() {}
 
     override fun initListeners() {
 
         binding.icLoginBtn.onClick {
-            val email = binding.editEmail.text.toString()
+            val email    = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
             viewModel.login(email, password)
         }
@@ -46,7 +45,6 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
                     PasswordTransformationMethod.getInstance()
                 binding.icPassword.setImageResource(R.drawable.ic_eye_hide)
             }
-
             binding.editPassword.setSelection(
                 binding.editPassword.text?.length ?: 0
             )
@@ -66,33 +64,24 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
         viewModel.loginState.observe(this) { result ->
             when (result) {
 
-                is NetworkResult.Loading -> {
-
+                is UiState.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
-                    binding.txtLogin.visibility = View.GONE
-                    binding.icLoginBtn.isEnabled = false
+                    binding.txtLogin.visibility    = View.GONE
+                    binding.icLoginBtn.isEnabled   = false
                 }
 
-                is NetworkResult.Success -> {
-
+                is UiState.Success -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.txtLogin.visibility = View.VISIBLE
-                    binding.icLoginBtn.isEnabled = true
+                    binding.txtLogin.visibility    = View.VISIBLE
+                    binding.icLoginBtn.isEnabled   = true
 
                     val user = result.data
+                    SharedPrefManager(this).token     = user.token
+                    SharedPrefManager(this).userId    = user._id
+                    SharedPrefManager(this).userEmail = user.email
 
-                    val pref = SharedPrefManager.getInstance(this)
-                    pref.token = user.token
-                    pref.userId = user.id
-                    pref.userEmail = user.email
-                    pref.userName = "${user.firstname} ${user.lastname}"
-                    pref.isLoggedIn = true
-
-                    Log.d(
-                        "LoginActivity",
-                        "token=${user.token} | id=${user.id} | email=${user.email}"
-                    )
                     showToast("Welcome, ${user.firstname}!")
+                    Log.d("SignIn", "${user.token} , ${user._id} , ${user.email}")
 
                     startActivityWithFlags<MainActivity>(
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or
@@ -101,12 +90,11 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
                     finish()
                 }
 
-                is NetworkResult.Error -> {
-
+                is UiState.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.txtLogin.visibility = View.VISIBLE
-                    binding.icLoginBtn.isEnabled = true
-
+                    binding.txtLogin.visibility    = View.VISIBLE
+                    binding.icLoginBtn.isEnabled   = true
+                    Log.e("LoginError", "Error: ${result.message}")
                     showToast(result.message)
                 }
             }

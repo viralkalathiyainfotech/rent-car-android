@@ -23,6 +23,9 @@
     <string name="confirm_password">CONFIRM PASSWORD</string>
     <string name="confirm_your_password">Confirm your password</string>
     <string name="reset_password">RESET PASSWORD</string>
+    <string name="gallery">Gallery</string>
+    <string name="explore_fleet">Explore Fleet</string>
+    <string name="home">Home</string>
     <string name="back_to_login">BACK TO LOGIN</string>
     <string name="please_check_your_email">. Please check your email.</string>
     <string name="ram_gmail_com">ram@gmail.com</string>
