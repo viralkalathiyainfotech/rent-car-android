@@ -1,4 +1,4 @@
-package com.example.rentcar.ui.auth
+package com.example.rentcar.ui.activity.auth
 
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -9,7 +9,7 @@ import com.example.rentcar.base.utils.NetworkResult
 import com.example.rentcar.base.utils.onClick
 import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.databinding.ActivityCreateAccountBinding
-import com.example.rentcar.ui.MainActivity
+import com.example.rentcar.ui.activity.MainActivity
 import com.example.rentcar.viewModel.RegisterViewModel
 
 class CreateAccountActivity :

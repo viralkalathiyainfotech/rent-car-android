@@ -1,4 +1,4 @@
-package com.example.rentcar.ui.auth
+package com.example.rentcar.ui.activity.auth
 
 import android.view.View
 import com.example.rentcar.base.BaseVMActivity

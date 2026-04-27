@@ -1,4 +1,4 @@
-package com.example.rentcar.ui
+package com.example.rentcar.ui.activity
 
 import android.content.Intent
 import android.os.Handler
@@ -6,7 +6,7 @@ import android.os.Looper
 import com.app.pan.book.utils.SharedPrefManager
 import com.example.rentcar.base.BaseActivity
 import com.example.rentcar.databinding.ActivitySplashActviityBinding
-import com.example.rentcar.ui.auth.LoginActivity
+import com.example.rentcar.ui.activity.auth.LoginActivity
 
 class SplashActivity :
     BaseActivity<ActivitySplashActviityBinding>(ActivitySplashActviityBinding::inflate) {

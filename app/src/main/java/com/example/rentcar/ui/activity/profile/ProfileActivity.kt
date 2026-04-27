@@ -1,4 +1,4 @@
-package com.example.rentcar.ui.profile
+package com.example.rentcar.ui.activity.profile
 
 import com.example.rentcar.base.BaseActivity
 import com.example.rentcar.databinding.ActivityProfileBinding

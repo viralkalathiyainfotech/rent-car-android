@@ -1,4 +1,4 @@
-package com.example.rentcar.ui
+package com.example.rentcar.ui.activity
 
 import android.app.Application
 import com.example.rentcar.apiService.RetrofitClient

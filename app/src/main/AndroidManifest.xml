@@ -20,7 +20,7 @@
         android:minSdkVersion="33" />
 
     <application
-        android:name=".ui.MyApplication"
+        android:name=".ui.activity.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -32,13 +32,13 @@
         android:theme="@style/Theme.RentCar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.EditProfileActivity"
+            android:name=".ui.activity.profile.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profile.ProfileActivity"
+            android:name=".ui.activity.profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,16 +47,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.ForgotPasswordActivity"
+            android:name=".ui.activity.auth.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.CreateAccountActivity"
+            android:name=".ui.activity.auth.CreateAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.LoginActivity"
+            android:name=".ui.activity.auth.LoginActivity"
             android:exported="false" />
     </application>
 

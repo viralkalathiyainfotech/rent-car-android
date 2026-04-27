@@ -1,4 +1,4 @@
-package com.example.rentcar.ui.auth
+package com.example.rentcar.ui.activity.auth
 
 import android.content.Intent
 import android.text.method.HideReturnsTransformationMethod
@@ -13,7 +13,8 @@ import com.example.rentcar.base.utils.onClick
 import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.base.utils.startActivityWithFlags
 import com.example.rentcar.databinding.ActivityLoginBinding
-import com.example.rentcar.ui.MainActivity
+import com.example.rentcar.ui.activity.MainActivity
+import com.example.rentcar.ui.auth.LoginViewModel
 
 class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
     ActivityLoginBinding::inflate,
