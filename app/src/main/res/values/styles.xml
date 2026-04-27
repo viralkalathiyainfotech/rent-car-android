@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomRadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:buttonTint">@null</item>
+        <item name="buttonTint">@null</item>
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <item name="colorControlActivated">@android:color/transparent</item>
+    </style>
+
+
+
+    <style name="KeyButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">74dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+
+
+
+    <style name="TabText">
+        <item name="android:textColor">#AAAAAA</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="TabTextSelected">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">#333333</item>
+    </style>
+
+
+
+
+</resources>

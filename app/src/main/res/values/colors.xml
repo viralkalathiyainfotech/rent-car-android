@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#E06A1B</color>
     <color name="themeLightText">#99FFFFFF</color>
+    <color name="themeGrey">#222222</color>
     <color name="checkbox">#A1A1A1</color>
     <color name="themeColor">#141414</color>
 </resources>

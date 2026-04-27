@@ -45,7 +45,7 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
                     PasswordTransformationMethod.getInstance()
                 binding.icPassword.setImageResource(R.drawable.ic_eye_hide)
             }
-            // Keep cursor at end
+
             binding.editPassword.setSelection(
                 binding.editPassword.text?.length ?: 0
             )
@@ -80,7 +80,6 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
 
                     val user = result.data
 
-                    // ── Save user data to SharedPref ──────────────────
                     val pref = SharedPrefManager.getInstance(this)
                     pref.token = user.token
                     pref.userId = user.id

@@ -32,9 +32,14 @@
         android:theme="@style/Theme.RentCar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,9 +57,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.auth.LoginActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
