@@ -27,4 +27,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Rent Car"
 include(":app")
-//include(":mylibrary")

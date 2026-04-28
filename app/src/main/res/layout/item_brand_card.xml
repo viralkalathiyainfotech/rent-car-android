@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_marginEnd="@dimen/_10sdp"
     app:cardBackgroundColor="#FF1E1E1E"
-    app:cardCornerRadius="6dp"
-    app:cardElevation="4dp">
+    app:cardCornerRadius="@dimen/_3sdp"
+    app:cardElevation="@dimen/_2sdp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,19 +16,19 @@
         <View
             android:id="@+id/viewTopAccent"
             android:layout_width="match_parent"
-            android:layout_height="3dp"
+            android:layout_height="@dimen/_2sdp"
             android:background="#FFE07B2B" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="@dimen/_6sdp">
 
             <FrameLayout
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_50sdp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="@dimen/_5sdp">
 
                 <View
                     android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                     android:ellipsize="marquee"
                     android:singleLine="true"
                     android:textColor="#FFFFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/_8sdp" />
             </FrameLayout>
 
             <LinearLayout
@@ -63,10 +63,10 @@
                     android:background="@drawable/bg_border_white"
                     android:fontFamily="@font/general_sans_medium"
                     android:letterSpacing="0.15"
-                    android:paddingStart="5dp"
-                    android:paddingTop="2dp"
-                    android:paddingEnd="5dp"
-                    android:paddingBottom="2dp"
+                    android:paddingStart="@dimen/_3sdp"
+                    android:paddingTop="@dimen/_1sdp"
+                    android:paddingEnd="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_1sdp"
                     android:text="SPORTS"
                     android:textColor="@color/yellow"
                     android:textSize="@dimen/_9ssp" />
@@ -79,7 +79,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="3dp"
+                    android:layout_marginEnd="@dimen/_2sdp"
                     android:text="★"
                     android:textColor="#FFF1C40F"
                     android:textSize="@dimen/_11sdp" />
@@ -98,7 +98,7 @@
                 android:id="@+id/tvBrandName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="@dimen/_2sdp"
                 android:fontFamily="@font/general_sans_semibold"
                 android:text="LAMBORGHINI"
                 android:textColor="#FFFFFFFF"
@@ -108,7 +108,7 @@
                 android:id="@+id/tvTagline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="@dimen/_6sdp"
                 android:fontFamily="@font/general_sans_medium"
                 android:text="Expect the Extreme"
                 android:textColor="#88FFFFFF"
@@ -117,7 +117,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:background="#22FFFFFF" />
 
             <LinearLayout
@@ -145,8 +145,8 @@
                     app:drawableTint="@color/yellow"
                     android:fontFamily="@font/general_sans_medium"
                     android:letterSpacing="0.08"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
                     android:text="EXPLORE "
                     android:textColor="@color/yellow"
                     android:textSize="@dimen/_9ssp" />

@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.builtin.kotlin)
     alias(libs.plugins.devtools.ksp)
     id("com.google.dagger.hilt.android")
-
 }
 
 android {
@@ -138,7 +137,6 @@ dependencies {
 
     // SplashScreen
     implementation(libs.androidx.core.splashscreen)
-
 
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)

@@ -17,7 +17,7 @@ interface ApiService {
     @POST("api/users/login")
     suspend fun loginUser(@Body credentials: Map<String, String>): LoginResponse
 
-       @POST("api/users/register")
+    @POST("api/users/register")
     suspend fun registerUser(@Body requestBody: Map<String, String>): RegisterResponseModel
 
     @GET("api/cars")
