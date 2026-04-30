@@ -65,6 +65,7 @@
                             android:fontFamily="@font/general_sans_semibold"
                             android:letterSpacing="0.08"
                             android:text="04"
+                            android:includeFontPadding="false"
                             android:textColor="#FFE07B2B"
                             android:textSize="@dimen/_11sdp" />
 
@@ -80,6 +81,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/general_sans_semibold"
+                            android:includeFontPadding="false"
                             android:letterSpacing="0.15"
                             android:text="ELECTRIC FUTURE"
                             android:textColor="#CCFFFFFF"
@@ -92,6 +94,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/general_sans_semibold"
                         android:letterSpacing="-0.02"
+                        android:includeFontPadding="false"
                         android:lineSpacingMultiplier="0.88"
                         android:text="SILENT"
                         android:textColor="#FFFFFFFF"
@@ -104,6 +107,7 @@
                         android:layout_marginBottom="@dimen/_4sdp"
                         android:fontFamily="@font/general_sans_semibold"
                         android:letterSpacing="0.01"
+                        android:includeFontPadding="false"
                         android:shadowColor="#FFE07B2B"
                         android:shadowDx="0"
                         android:shadowDy="0"
@@ -116,6 +120,7 @@
                         android:id="@+id/tvSubtitle"
                         android:layout_width="@dimen/_250sdp"
                         android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
                         android:layout_marginBottom="@dimen/_6sdp"
                         android:text="The future is here. Sustainable power meets instant torque in our premium electric vehicle category."
                         android:textColor="#CCFFFFFF"
@@ -141,6 +146,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_30sdp"
                                 android:layout_marginEnd="@dimen/_6sdp"
+                                android:includeFontPadding="false"
                                 android:fontFamily="@font/general_sans_semibold"
                                 android:gravity="center"
                                 android:paddingStart="@dimen/_5sdp"
@@ -177,6 +183,7 @@
                                 android:layout_height="@dimen/_30sdp"
                                 android:layout_marginEnd="@dimen/_6sdp"
                                 android:fontFamily="@font/general_sans_semibold"
+                                android:includeFontPadding="false"
                                 android:gravity="center"
                                 android:paddingStart="@dimen/_5sdp"
                                 android:text="ECO-PERFORMANCE   "
@@ -213,6 +220,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
                                 android:fontFamily="@font/general_sans_medium"
                                 android:text="FULL INSURANCE"
                                 android:textColor="#AAFFFFFF"
@@ -235,6 +243,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
                                 android:fontFamily="@font/general_sans_medium"
                                 android:singleLine="true"
                                 android:text="ANYWHERE DELIVERY"
@@ -260,6 +269,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/general_sans_medium"
+                                android:includeFontPadding="false"
                                 android:text="LATEST MODELS"
                                 android:textColor="#AAFFFFFF"
                                 android:textSize="@dimen/_8ssp" />
@@ -302,6 +312,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/_2sdp"
+                            android:includeFontPadding="false"
                             android:fontFamily="@font/general_sans_medium"
                             android:letterSpacing="0.15"
                             android:text="TOP MANUFACTURES"
@@ -316,6 +327,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
                                 android:textColor="#FFFFFFFF"
                                 android:fontFamily="@font/general_sans_semibold"
                                 android:text="EXPLORE "
@@ -323,6 +335,7 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
+                                android:includeFontPadding="false"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/_5sdp"
                                 android:fontFamily="@font/general_sans_semibold"
@@ -402,6 +415,7 @@
                             android:layout_marginBottom="@dimen/_2sdp"
                             android:fontFamily="@font/general_sans_medium"
                             android:letterSpacing="0.15"
+                            android:includeFontPadding="false"
                             android:text="PREMIUM FLEET"
                             android:textColor="#FFE07B2B"
                             android:textSize="@dimen/_10sdp" />
@@ -415,6 +429,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/general_sans_semibold"
+                                android:includeFontPadding="false"
                                 android:text="FEATURED"
                                 android:textColor="#FFFFFFFF"
                                 android:textSize="@dimen/_16sdp" />
@@ -425,6 +440,7 @@
                                 android:layout_marginStart="@dimen/_5sdp"
                                 android:fontFamily="@font/general_sans_semibold"
                                 android:text="VEHICLES"
+                                android:includeFontPadding="false"
                                 android:textColor="#FFE07B2B"
                                 android:textSize="@dimen/_16sdp" />
                         </LinearLayout>
@@ -444,6 +460,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/general_sans_semibold"
                             android:text="View All Fleet"
+                            android:includeFontPadding="false"
                             android:textColor="@color/themeGrey"
                             android:textSize="@dimen/_11sdp" />
 
@@ -479,6 +496,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:includeFontPadding="false"
                         android:fontFamily="@font/general_sans_medium"
                         android:letterSpacing="0.2"
                         android:text="SEAMLESS PROCESS"
@@ -497,6 +515,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/general_sans_semibold"
                             android:text="HOW IT "
+                            android:includeFontPadding="false"
                             android:textColor="#FFFFFFFF"
                             android:textSize="@dimen/_24sdp" />
 
@@ -505,6 +524,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/general_sans_semibold"
                             android:text="WORKS"
+                            android:includeFontPadding="false"
                             android:textColor="#FFE07B2B"
                             android:textSize="@dimen/_24sdp" />
                     </LinearLayout>
@@ -515,6 +535,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="@dimen/_12sdp"
+                        android:includeFontPadding="false"
                         android:gravity="center"
                         android:text="Experience the future of car rentals with our streamlined\nthree-step booking process designed for speed and convenience."
                         android:textColor="#AAFFFFFF"
@@ -529,10 +550,7 @@
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="@dimen/_5sdp"
                             android:clipToPadding="false"
-                            android:paddingStart="0dp"
-                            android:paddingEnd="@dimen/_8sdp"
                             android:scrollbars="none">
 
                             <LinearLayout
@@ -571,6 +589,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="top|end"
                                             android:background="@drawable/bg_badge_orange"
+                                            android:includeFontPadding="false"
                                             android:fontFamily="@font/general_sans_semibold"
                                             android:paddingStart="@dimen/_3sdp"
                                             android:paddingTop="@dimen/_2sdp"
@@ -586,6 +605,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_horizontal"
                                         android:layout_marginBottom="@dimen/_4sdp"
+                                        android:includeFontPadding="false"
                                         android:fontFamily="@font/general_sans_semibold"
                                         android:gravity="center"
                                         android:text="CHOOSE LOCATION"
@@ -596,6 +616,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_horizontal"
+                                        android:includeFontPadding="false"
                                         android:gravity="center"
                                         android:text="Select your preferred pickup point from our extensive network of premium outlets across the city."
                                         android:textColor="#AAFFFFFF"
@@ -631,6 +652,7 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:includeFontPadding="false"
                                             android:layout_gravity="top|end"
                                             android:background="@drawable/bg_badge_orange"
                                             android:fontFamily="@font/general_sans_semibold"
@@ -648,6 +670,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_horizontal"
                                         android:layout_marginBottom="@dimen/_4sdp"
+                                        android:includeFontPadding="false"
                                         android:fontFamily="@font/general_sans_semibold"
                                         android:gravity="center"
                                         android:text="PICK-UP DATE"
@@ -658,6 +681,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_horizontal"
+                                        android:includeFontPadding="false"
                                         android:gravity="center"
                                         android:text="Flexible scheduling options that fit your timeline. Book instantly with our real-time availability system."
                                         android:textColor="#AAFFFFFF"
@@ -697,6 +721,7 @@
                                             android:background="@drawable/bg_badge_orange"
                                             android:fontFamily="@font/general_sans_semibold"
                                             android:paddingStart="@dimen/_3sdp"
+                                            android:includeFontPadding="false"
                                             android:paddingTop="@dimen/_2sdp"
                                             android:paddingEnd="@dimen/_3sdp"
                                             android:paddingBottom="@dimen/_2sdp"
@@ -710,6 +735,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_horizontal"
                                         android:layout_marginBottom="@dimen/_4sdp"
+                                        android:includeFontPadding="false"
                                         android:fontFamily="@font/general_sans_semibold"
                                         android:gravity="center"
                                         android:text="BOOK YOUR CAR"
@@ -719,6 +745,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
                                         android:layout_gravity="center_horizontal"
                                         android:gravity="center"
                                         android:text="Confirm your reservation with a few clicks. No hidden fees, just pure performance at your fingertips."
@@ -731,6 +758,161 @@
 
                     </LinearLayout>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="#FF111111"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/general_sans_medium"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.2"
+                        android:text="VISUAL EXCELLENCE"
+                        android:textColor="#FFE07B2B"
+                        android:textSize="@dimen/_9ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/general_sans_semibold"
+                            android:includeFontPadding="false"
+                            android:text="CAR "
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="@dimen/_22sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/general_sans_semibold"
+                            android:text="GALLERY"
+                            android:includeFontPadding="false"
+                            android:textColor="#FFE07B2B"
+                            android:textSize="@dimen/_22sdp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="#FFE07B2B" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <FrameLayout
+                                android:layout_width="@dimen/_200sdp"
+                                android:layout_height="@dimen/_120sdp"
+                                android:background="@drawable/bg_vehicle_card"
+                                android:clipToOutline="true"
+                                android:outlineProvider="background">
+
+                                <ImageView
+                                    android:id="@+id/ivCarImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="@null"
+                                    android:scaleType="centerCrop"
+                                    tools:src="@drawable/dummy_image" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="@dimen/_200sdp"
+                                android:layout_height="@dimen/_120sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:background="@drawable/bg_vehicle_card"
+                                android:clipToOutline="true"
+                                android:outlineProvider="background">
+
+                                <ImageView
+                                    android:id="@+id/ivCarImage2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="@null"
+                                    android:scaleType="centerCrop"
+                                    tools:src="@drawable/dummy_image" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="@dimen/_200sdp"
+                                android:layout_height="@dimen/_120sdp"
+                                android:background="@drawable/bg_vehicle_card"
+                                android:clipToOutline="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:outlineProvider="background">
+
+                                <ImageView
+                                    android:id="@+id/ivCarImage3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="@null"
+                                    android:scaleType="centerCrop"
+                                    tools:src="@drawable/dummy_image" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:id="@+id/btnExploreGallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_orange"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="@dimen/_15sdp"
+                            android:background="@drawable/bg_btn_orange"
+                            android:fontFamily="@font/general_sans_bold"
+                            android:gravity="center"
+                            android:letterSpacing="0.02"
+                            android:includeFontPadding="false"
+                            android:text="EXPLORE FULL GALLERY"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:src="@drawable/ic_next" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
 
             </LinearLayout>
 

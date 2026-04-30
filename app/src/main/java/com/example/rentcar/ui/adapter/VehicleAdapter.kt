@@ -1,5 +1,6 @@
 package com.example.rentcar.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,12 +46,12 @@ class VehicleAdapter(
             .placeholder(R.drawable.dummy_image)
             .into(holder.ivCarImage)
 
-        holder.tvCategory.text     = item.category
-        holder.tvCarName.text      = item.name
-        holder.tvPrice.text        = "$${item.pricePerDay}/day"
-        holder.tvFuelType.text     = item.specs.fuel
+        holder.tvCategory.text = item.category
+        holder.tvCarName.text  = item.name
+        holder.tvPrice.text    = "$${item.pricePerDay}"
+        holder.tvFuelType.text = item.specs.fuel
         holder.tvTransmission.text = item.specs.transmission
-        holder.tvSeats.text        = item.specs.seating
+        holder.tvSeats.text = item.specs.seating
         holder.tvAcceleration.text = item.specs.acceleration
 
         holder.btnRentNow.setOnClickListener { onRentNow(item) }
@@ -59,6 +60,7 @@ class VehicleAdapter(
 
     fun updateList(newList: List<CarResponseModelItem>) {
         list = newList
+        Log.d("list---", "updateList: ---${list}")
         notifyDataSetChanged()
     }
 }
