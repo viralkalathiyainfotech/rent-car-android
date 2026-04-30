@@ -1,18 +1,15 @@
 package com.example.rentcar.ui.fragment
 
-import android.content.Intent
 import com.app.pan.book.utils.SharedPrefManager
 import com.example.rentcar.base.BaseFragment
 import com.example.rentcar.base.utils.dialog.LogoutDialog
 import com.example.rentcar.base.utils.loadImage
 import com.example.rentcar.base.utils.onClick
 import com.example.rentcar.base.utils.startActivityNormal
-import com.example.rentcar.base.utils.startActivityWithFlags
 import com.example.rentcar.databinding.FragmentProfileBinding
 import com.example.rentcar.ui.activity.MyBookingActivity
 import com.example.rentcar.ui.activity.auth.ChangePasswordActivity
 import com.example.rentcar.ui.activity.profile.EditProfileActivity
-import com.example.rentcar.ui.auth.LoginActivity
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 

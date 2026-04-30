@@ -54,4 +54,24 @@
     <string name="update_profile">Update Profile</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="todo">todo</string>
+    <string name="enter_your_number">Enter Your Number</string>
+    <string name="booking_details">Booking Details</string>
+    <string name="bentley_continental_gt">Bentley Continental GT</string>
+    <string name="_135c4e">135C4E</string>
+    <string name="customer_name">CUSTOMER NAME</string>
+    <string name="ram">RAM</string>
+    <string name="total_price">TOTAL PRICE</string>
+    <string name="_900">$900</string>
+    <string name="return_date">RETURN DATE</string>
+    <string name="_4_6_2026">4/6/2026</string>
+    <string name="transmission">TRANSMISSION</string>
+    <string name="automatic">Automatic</string>
+    <string name="status">STATUS</string>
+    <string name="completed">COMPLETED</string>
+    <string name="pickup_date">PICKUP DATE</string>
+    <string name="_4_5_2026">4/5/2026</string>
+    <string name="fuel_type">FUEL TYPE</string>
+    <string name="petrol">Petrol</string>
+    <string name="seating">SEATING</string>
+    <string name="_4_people">4 People</string>
 </resources>

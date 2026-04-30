@@ -9,7 +9,9 @@ import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.databinding.ActivityForgotPasswordBinding
 import com.example.rentcar.ui.auth.LoginActivity
 import com.example.rentcar.viewModel.ForgotPasswordViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ForgotPasswordActivity :
     BaseVMActivity<ActivityForgotPasswordBinding, ForgotPasswordViewModel>(
         ActivityForgotPasswordBinding::inflate,
@@ -19,14 +21,10 @@ class ForgotPasswordActivity :
     override fun initViews() {}
 
     override fun initListeners() {
-
-
         binding.btnSignIn.onClick {
             startActivityNormal<LoginActivity>()
             finish()
         }
-
-
         binding.icLoginBtn.onClick {
             val email = binding.editEmail.text.toString()
             viewModel.forgotPassword(email)

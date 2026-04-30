@@ -3,6 +3,7 @@ package com.example.rentcar.ui.activity.profile
 import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import com.app.pan.book.utils.SharedPrefManager
@@ -20,8 +21,6 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
     ActivityEditProfileBinding::inflate,
     EditProfileViewModel::class.java
 ) {
-
-
     private val imagePickerLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
@@ -78,6 +77,7 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
                 phone = binding.etMobile.text.toString(),
                 imageUri = viewModel.selectedImageUri.value
             )
+            Log.d("imgUrl---", "initListeners: ----${viewModel.selectedImageUri.value}")
         }
     }
 

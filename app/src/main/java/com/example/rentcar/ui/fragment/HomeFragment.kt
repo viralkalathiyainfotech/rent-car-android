@@ -50,26 +50,6 @@ class HomeFragment : BaseVMFragment<FragmentHomeBinding, HomeViewModel>(
     }
 
     override fun initObservers() {
-//        viewModel.carsState.observe(viewLifecycleOwner) { result ->
-//            when (result) {
-//
-//                is
-//                UiState.Loading -> {
-//                    // binding.progressBar.visibility = View.VISIBLE
-//                }
-//
-//                is UiState.Success -> {
-//                    // binding.progressBar.visibility = View.GONE
-//                    vehicleAdapter.updateList(result.data)
-//                }
-//
-//                is UiState.Error -> {
-//                    // binding.progressBar.visibility = View.GONE
-//                    showToast(result.message)
-//                }
-//            }
-//        }
-
         viewModel.carsState.observe(viewLifecycleOwner) { result ->
             when (result) {
                 is UiState.Loading -> {}

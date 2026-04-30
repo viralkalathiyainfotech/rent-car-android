@@ -3,9 +3,9 @@ package com.example.rentcar.ui.activity
 import androidx.fragment.app.Fragment
 import com.example.rentcar.R
 import com.example.rentcar.base.BaseActivity
-import com.example.rentcar.base.ui.fragment.ExploreFleetFragment
-import com.example.rentcar.base.ui.fragment.GalleryFragment
 import com.example.rentcar.databinding.ActivityMainBinding
+import com.example.rentcar.ui.fragment.ExploreFragment
+import com.example.rentcar.ui.fragment.GalleryFragment
 import com.example.rentcar.ui.fragment.HomeFragment
 import com.example.rentcar.ui.fragment.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +18,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         private const val TAG_HOME = "TAG_HOME"
         private const val TAG_EXPLORE = "TAG_EXPLORE"
         private const val TAG_GALLERY = "TAG_GALLERY"
+        private const val TAG_PROFILE = "TAG_PROFILE"
     }
 
     override fun initViews() {
@@ -33,7 +34,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 }
 
                 R.id.nav_explore -> {
-                    openFragment(ExploreFleetFragment(), TAG_EXPLORE); true
+                    openFragment(ExploreFragment(), TAG_EXPLORE); true
                 }
 
                 R.id.nav_gallery -> {
@@ -41,12 +42,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 }
 
                 R.id.nav_profile -> {
-                    openFragment(ProfileFragment(), TAG_GALLERY); true
+                    openFragment(ProfileFragment(), TAG_PROFILE); true
                 }
 
                 else -> false
             }
         }
+    }
+
+    fun navigateToTab(itemId: Int) {
+        binding.bottomNav.selectedItemId = itemId
     }
 
     override fun initObservers() {}
