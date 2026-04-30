@@ -28,11 +28,7 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
                 uri?.let {
                     viewModel.setSelectedImage(it)
 
-                    Glide.with(this)
-                        .load(it)
-                        .placeholder(R.drawable.image_profile)
-                        .circleCrop()
-                        .into(binding.ivProfile)
+                    binding.ivProfile.loadImage(it.toString(), isCircle = true)
                 }
             }
         }
