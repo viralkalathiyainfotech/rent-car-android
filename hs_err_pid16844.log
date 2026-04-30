@@ -1,0 +1,61 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 34976 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (arena.cpp:184), pid=16844, tid=12984
+#
+# JRE version: OpenJDK Runtime Environment Temurin-18.0.2.1+1 (18.0.2.1+1) (build 18.0.2.1+1)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-18.0.2.1+1 (18.0.2.1+1, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @D:\Rushit Android\rent-car-android\app\build\20260428_3160834620417256942.compiler.options
+
+Host: Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Tue Apr 28 12:48:19 2026 India Standard Time elapsed time: 1.135207 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001fa41d636c0):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=12984, stack(0x000000a339900000,0x000000a339a00000)]
+
+
+Current CompileTask:
+C2:   1135 1195       4       java.util.concurrent.ConcurrentHashMap::addCount (280 bytes)
+
+Stack: [0x000000a339900000,0x000000a339a00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x69d85a]
+V  [jvm.dll+0x84c43d]
+V  [jvm.dll+0x84dd4e]
+V  [jvm.dll+0x84e403]
+V  [jvm.dll+0x25f65f]
+V  [jvm.dll+0xba54f]
+V  [jvm.dll+0xba8c5]
+V  [jvm.dll+0x2ca83f]
+V  [jvm.dll+0x5a3abe]
+V  [jvm.dll+0x23a9d3]
+V  [jvm.dll+0x233f39]
+V  [jvm.dll+0x2318cb]
+V  [jvm.dll+0x1bc05c]
+V  [jvm.dll+0x2414ca]
+V  [jvm.dll+0x23f795]
+V  [jvm.dll+0x7feafb]
+V  [jvm.dll+0x7f8f4a]

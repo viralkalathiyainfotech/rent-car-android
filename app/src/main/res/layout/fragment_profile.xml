@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginVertical="@dimen/_10sdp"
-        android:fontFamily="@font/generalsans_semibold"
+        android:layout_marginVertical="@dimen/_25sdp"
+        android:fontFamily="@font/general_sans_semibold"
         android:includeFontPadding="false"
         android:text="@string/profile"
         android:textColor="@color/white"
@@ -59,7 +59,7 @@
                         android:id="@+id/txtProfileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/generalsans_medium"
+                        android:fontFamily="@font/general_sans_medium"
                         android:includeFontPadding="false"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_12ssp" />
@@ -70,17 +70,13 @@
                         android:layout_marginTop="@dimen/_8sdp"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="@dimen/_15sdp"
-                            android:layout_height="@dimen/_15sdp"
-                            android:src="@drawable/ic_email" />
+
 
                         <TextView
                             android:id="@+id/txtEmail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:fontFamily="@font/generalsans_regular"
+                            android:fontFamily="@font/general_sans_regular"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_10ssp" />
                     </LinearLayout>
@@ -89,8 +85,8 @@
 
                 <ImageView
                     android:id="@+id/btnEditProfile"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:src="@drawable/ic_edit_profile" />
@@ -119,15 +115,15 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:src="@drawable/ic_my_booking" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:fontFamily="@font/generalsans_medium"
+                    android:fontFamily="@font/general_sans_medium"
                     android:includeFontPadding="false"
                     android:text="@string/my_booking"
                     android:textColor="@color/white"
@@ -143,15 +139,15 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:src="@drawable/ic_pass" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:fontFamily="@font/generalsans_medium"
+                    android:fontFamily="@font/general_sans_medium"
                     android:includeFontPadding="false"
                     android:text="@string/change_password"
                     android:textColor="@color/white"
@@ -166,15 +162,15 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:src="@drawable/ic_log_out" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:fontFamily="@font/generalsans_medium"
+                    android:fontFamily="@font/general_sans_medium"
                     android:includeFontPadding="false"
                     android:text="@string/logout"
                     android:textColor="@color/white"

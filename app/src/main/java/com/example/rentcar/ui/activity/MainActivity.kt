@@ -3,15 +3,17 @@ package com.example.rentcar.ui.activity
 import androidx.fragment.app.Fragment
 import com.example.rentcar.R
 import com.example.rentcar.base.BaseActivity
+import com.example.rentcar.base.ui.fragment.ExploreFleetFragment
+import com.example.rentcar.base.ui.fragment.GalleryFragment
 import com.example.rentcar.databinding.ActivityMainBinding
-import com.example.rentcar.ui.fragment.ExploreFragment
-import com.example.rentcar.ui.fragment.GalleryFragment
 import com.example.rentcar.ui.fragment.HomeFragment
+import com.example.rentcar.ui.fragment.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+
     companion object {
         private const val TAG_HOME = "TAG_HOME"
         private const val TAG_EXPLORE = "TAG_EXPLORE"
@@ -19,8 +21,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
     override fun initViews() {
-        binding.toolbar.txtTitle.text = "Home"
-
         openFragment(HomeFragment(), TAG_HOME)
         binding.bottomNav.selectedItemId = R.id.nav_home
     }
@@ -29,30 +29,24 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    binding.toolbar.txtTitle.text = "Home"
-                    openFragment(HomeFragment(), TAG_HOME)
-                    true
+                    openFragment(HomeFragment(), TAG_HOME); true
                 }
 
                 R.id.nav_explore -> {
-                    binding.toolbar.txtTitle.text = "Explore"
-                    openFragment(ExploreFragment(), TAG_EXPLORE)
-                    true
+                    openFragment(ExploreFleetFragment(), TAG_EXPLORE); true
                 }
 
                 R.id.nav_gallery -> {
-                    binding.toolbar.txtTitle.text = "Gallery"
-                    openFragment(GalleryFragment(), TAG_GALLERY)
-                    true
+                    openFragment(GalleryFragment(), TAG_GALLERY); true
+                }
+
+                R.id.nav_profile -> {
+                    openFragment(ProfileFragment(), TAG_GALLERY); true
                 }
 
                 else -> false
             }
         }
-    }
-
-    fun navigateToTab(itemId: Int) {
-        binding.bottomNav.selectedItemId = itemId
     }
 
     override fun initObservers() {}
@@ -67,5 +61,4 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             .replace(R.id.nav_host_fragment, target, tag)
             .commitAllowingStateLoss()
     }
-
 }

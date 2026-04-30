@@ -2,11 +2,12 @@ package com.example.rentcar.ui.activity.auth
 
 import android.view.View
 import com.example.rentcar.base.BaseVMActivity
-import com.example.rentcar.base.utils.EmailSentDialog
-import com.example.rentcar.base.utils.NetworkResult
+import com.example.rentcar.base.utils.dialog.EmailSentDialog
+import com.example.rentcar.base.utils.UiState
 import com.example.rentcar.base.utils.onClick
 import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.databinding.ActivityForgotPasswordBinding
+import com.example.rentcar.ui.auth.LoginActivity
 import com.example.rentcar.viewModel.ForgotPasswordViewModel
 
 class ForgotPasswordActivity :
@@ -35,13 +36,13 @@ class ForgotPasswordActivity :
     override fun initObservers() {
         viewModel.forgotPasswordState.observe(this) { result ->
             when (result) {
-                is NetworkResult.Loading -> {
+                is UiState.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
                     binding.txtLogin.visibility = View.GONE
                     binding.icLoginBtn.isEnabled = false
                 }
 
-                is NetworkResult.Success -> {
+                is UiState.Success<*> -> {
                     binding.progressBar.visibility = View.GONE
                     binding.txtLogin.visibility = View.VISIBLE
                     binding.icLoginBtn.isEnabled = true
@@ -57,7 +58,7 @@ class ForgotPasswordActivity :
                     ).show(supportFragmentManager, EmailSentDialog.TAG)
                 }
 
-                is NetworkResult.Error -> {
+                is UiState.Error -> {
                     binding.progressBar.visibility = View.GONE
                     binding.txtLogin.visibility = View.VISIBLE
                     binding.icLoginBtn.isEnabled = true

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet_dialog"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/general_sans_medium"
+                android:includeFontPadding="false"
+                android:text="@string/booking_details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp" />
+
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_close" />
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgCar"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:contentDescription="@string/todo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/splash_image" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtCarName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/bentley_continental_gt"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/txtCarID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/bg_tag"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/_135c4e"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/customer_name"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtCustomerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/ram"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/total_price"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/_900"
+                    android:textColor="#FF8C2A"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/return_date"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtReturnDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/_4_6_2026"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/transmission"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtTransmission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/automatic"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/status"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bg_status"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/completed"
+                    android:textColor="#6C7CFF"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/pickup_date"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtPickupDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/_4_5_2026"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/fuel_type"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtFuelType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/petrol"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/general_sans_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/seating"
+                    android:textColor="@color/themeLightText"
+                    android:textSize="@dimen/_9ssp" />
+
+                <TextView
+                    android:id="@+id/txtSeating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/general_sans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/_4_people"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
