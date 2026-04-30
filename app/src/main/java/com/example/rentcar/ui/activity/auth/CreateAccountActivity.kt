@@ -14,7 +14,6 @@ import com.example.rentcar.ui.activity.MainActivity
 import com.example.rentcar.viewModel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class CreateAccountActivity :
     BaseVMActivity<ActivityCreateAccountBinding, RegisterViewModel>(
         ActivityCreateAccountBinding::inflate,
@@ -58,7 +57,7 @@ class CreateAccountActivity :
             )
         }
 
-        // ── Create account button 
+        // ── Create account button
         binding.icLoginBtn.onClick {
             if (!binding.checkBox.isChecked) {
                 showToast("Please accept the Terms of Service and Privacy Policy")

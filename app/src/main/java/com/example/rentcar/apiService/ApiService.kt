@@ -25,4 +25,13 @@ interface ApiService {
 
     @GET("api/brands")
     suspend fun getAllBrands(): Response<BrandResponseModel>
+    @POST("api/users/register")   // ← adjust path to match your backend
+    suspend fun registerUser(
+        @Body request: RegisterRequest
+    ): Response<CreateUSerResponse>
+
+    @POST("api/users/forgotpassword")
+    suspend fun forgotPassword(
+        @Body request: ForgotPasswordRequest
+    ): Response<ForgotPasswordResponse>
 }

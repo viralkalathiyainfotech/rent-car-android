@@ -15,5 +15,6 @@
 
 
     <color name="themeLightText">#99FFFFFF</color>
+    <color name="themeGrey">#222222</color>
     <color name="checkbox">#A1A1A1</color>
 </resources>

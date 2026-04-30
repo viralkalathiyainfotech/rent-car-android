@@ -52,6 +52,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation(libs.roundedimageview)
+
     implementation("com.google.dagger:hilt-android:2.59.2")
     ksp("com.google.dagger:hilt-android-compiler:2.59.2")
 
@@ -140,4 +142,6 @@ dependencies {
 
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)
+
+    implementation("com.hbb20:ccp:2.7.3")
 }

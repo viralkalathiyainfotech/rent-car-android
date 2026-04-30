@@ -44,11 +44,16 @@
 
         <activity
             android:name=".ui.auth.ForgotPasswordActivity"
+            android:name=".ui.activity.profile.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.CreateAccountActivity"
+            android:name=".ui.activity.profile.ProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
             android:name=".ui.auth.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize">
@@ -58,6 +63,18 @@
             <!--                <category android:name="android.intent.category.LAUNCHER" />-->
             <!--            </intent-filter>-->
         </activity>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.auth.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.auth.CreateAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.auth.LoginActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
