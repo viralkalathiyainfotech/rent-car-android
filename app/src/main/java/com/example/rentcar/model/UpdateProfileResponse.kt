@@ -28,6 +28,9 @@ data class UpdateProfileResponse(
     @field:SerializedName("lastname")
     val lastname: String,
 
+    @field:SerializedName("location")
+    val location: String,
+
     @field:SerializedName("token")
     val token: String
 )

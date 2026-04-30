@@ -78,16 +78,16 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
         firstName: String,
         lastName: String,
         phone: String,
+        location : String,
         imgPart: MultipartBody.Part?
     ): UiState<UpdateProfileResponse> {
         return try {
             val firstNameBody = firstName.toRequestBody("text/plain".toMediaTypeOrNull())
             val lastNameBody = lastName.toRequestBody("text/plain".toMediaTypeOrNull())
             val phoneBody = phone.toRequestBody("text/plain".toMediaTypeOrNull())
+            val location = location.toRequestBody("text/plain".toMediaTypeOrNull())
 
-            Log.d("Edit Profile : ", "$firstNameBody")
-            Log.d("Edit Profile : ", "$lastNameBody")
-            Log.d("Edit Profile : ", "$phoneBody")
+
             Log.d("Edit Profile : ", "$imgPart")
 
             val response = apiService.updateProfile(
@@ -95,6 +95,7 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
                 firstName = firstNameBody,
                 lastName = lastNameBody,
                 phone = phoneBody,
+                location = location,
                 img = imgPart
             )
             UiState.Success(response)

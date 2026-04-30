@@ -8,6 +8,7 @@ import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import com.app.pan.book.utils.SharedPrefManager
 import com.bumptech.glide.Glide
+import com.example.rentcar.R
 import com.example.rentcar.base.BaseVMActivity
 import com.example.rentcar.base.utils.UiState
 import com.example.rentcar.base.utils.loadImage
@@ -28,16 +29,13 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
                 uri?.let {
                     viewModel.setSelectedImage(it)
 
-                    Glide.with(this).load(it).circleCrop().into(binding.ivProfile)
+                    binding.ivProfile.loadImage(it.toString(), isCircle = true)
                 }
             }
         }
 
     override fun initViews() {
-
         val pref = SharedPrefManager.getInstance(this)
-
-
         val fullName = pref.userName
             ?.split(" ")
             ?.map { it.trim() }
@@ -48,9 +46,12 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
         binding.etLastName.setText(fullName.getOrNull(1) ?: "")
         binding.etEmail.setText(pref.userEmail?.trim() ?: "")
         binding.etMobile.setText(pref.userPhone?.trim() ?: "")
+        binding.etLocation.setText(pref.userLocation?.trim() ?: "")
 
         val savedImg = pref.getString("user_profile_image", "")
-        binding.ivProfile.loadImage(savedImg, isCircle = true)
+        if (savedImg.isNotBlank()) {
+            binding.ivProfile.loadImage(savedImg, isCircle = true)
+        }
     }
 
     override fun initListeners() {
@@ -62,6 +63,7 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
         binding.btnCamera.onClick {
             val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             intent.type = "image/*"
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             imagePickerLauncher.launch(intent)
         }
 
@@ -75,6 +77,7 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
                 firstName = binding.etFirstName.text.toString(),
                 lastName = binding.etLastName.text.toString(),
                 phone = binding.etMobile.text.toString(),
+                location = binding.etLocation.text.toString(),
                 imageUri = viewModel.selectedImageUri.value
             )
             Log.d("imgUrl---", "initListeners: ----${viewModel.selectedImageUri.value}")
@@ -82,11 +85,9 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
     }
 
     override fun initObservers() {
-
         viewModel.updateState.observe(this) { result ->
             when (result) {
                 is UiState.Loading -> {
-
                     binding.progressBar.visibility = View.VISIBLE
                     binding.txtUpdateProfile.visibility = View.GONE
                     binding.btnUpdate.isEnabled = false
@@ -98,19 +99,22 @@ class EditProfileActivity : BaseVMActivity<ActivityEditProfileBinding, EditProfi
                     binding.btnUpdate.isEnabled = true
 
                     val user = result.data
-
                     val pref = SharedPrefManager.getInstance(this)
-                    pref.userName = "${user.firstname} ${user.lastname}"
-                    pref.userEmail = user.email
-                    pref.token = user.token
-                    pref.userPhone = user.phoneNo
-                    pref.putString("user_profile_image", user.img)
+
+                    pref.userName = "${user.firstname.trim()} ${user.lastname.trim()}"
+                    pref.userEmail = user.email.trim()
+                    pref.token = user.token.trim()
+                    pref.userPhone = user.phoneNo.trim()
+                    pref.userLocation = user.location.trim()
+                    pref.putString("user_profile_image", user.img.trim())
 
                     showToast("Profile updated successfully!")
                     finish()
                 }
 
                 is UiState.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    binding.txtUpdateProfile.visibility = View.VISIBLE
                     binding.btnUpdate.isEnabled = true
                     showToast(result.message)
                 }

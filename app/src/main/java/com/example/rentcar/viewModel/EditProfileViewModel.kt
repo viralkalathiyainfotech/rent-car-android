@@ -2,7 +2,6 @@ package com.example.rentcar.viewModel
 
 import android.content.Context
 import android.net.Uri
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,7 +14,6 @@ import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
 import java.io.FileOutputStream
 import javax.inject.Inject
@@ -24,22 +22,27 @@ import javax.inject.Inject
 class EditProfileViewModel @Inject constructor(
     private val repository: UserRepository
 ) : ViewModel() {
+
     private val _updateState = MutableLiveData<UiState<UpdateProfileResponse>>()
     val updateState: LiveData<UiState<UpdateProfileResponse>> = _updateState
+
     private val _selectedImageUri = MutableLiveData<Uri?>()
     val selectedImageUri: LiveData<Uri?> = _selectedImageUri
+
     fun setSelectedImage(uri: Uri?) {
         _selectedImageUri.value = uri
     }
+
     fun updateProfile(
         context: Context,
         token: String,
         firstName: String,
         lastName: String,
         phone: String,
+        location: String,
         imageUri: Uri?
     ) {
-        // Validation
+        // ── Validation ────────────────────────────────────
         if (firstName.isBlank()) {
             _updateState.value = UiState.Error("First name is required")
             return
@@ -56,49 +59,43 @@ class EditProfileViewModel @Inject constructor(
             _updateState.value = UiState.Error("Enter a valid phone number")
             return
         }
+        if (location.isBlank()) {
+            _updateState.value = UiState.Error("Location is required")
+            return
+        }
 
         _updateState.value = UiState.Loading
 
         viewModelScope.launch {
-            try {
-                // Step 1: Text parts
-                val firstNamePart = firstName.trim().toRequestBody("text/plain".toMediaTypeOrNull())
-                val lastNamePart = lastName.trim().toRequestBody("text/plain".toMediaTypeOrNull())
-                val phonePart = phone.trim().toRequestBody("text/plain".toMediaTypeOrNull())
+            val imgPart: MultipartBody.Part? = imageUri?.let { uri ->
+                try {
+                    val inputStream = context.contentResolver.openInputStream(uri)
+                        ?: return@let null
+                    val tempFile =
+                        File(context.cacheDir, "profile_${System.currentTimeMillis()}.jpg")
+                    val outputStream = FileOutputStream(tempFile)
+                    inputStream.copyTo(outputStream)
+                    inputStream.close()
+                    outputStream.close()
 
-                // Step 2: Image part (null if no image selected)
-                val photoPart: MultipartBody.Part? = imageUri?.let { uri ->
-                    val file = uriToFile(context, uri)
-                    val requestBody = file.asRequestBody("image/*".toMediaTypeOrNull())
-                    MultipartBody.Part.createFormData("photo", file.name, requestBody)
+                    if (tempFile.length() == 0L) return@let null
+
+                    val requestBody = tempFile.asRequestBody("image/jpeg".toMediaTypeOrNull())
+                    MultipartBody.Part.createFormData("img", tempFile.name, requestBody)
+                } catch (e: Exception) {
+                    null
                 }
-
-                // Step 3: API call
-                val response = repository.updateProfile(
-                    token = token,
-                    firstName = firstNamePart.toString(),
-                    lastName = lastNamePart.toString(),
-                    phone = phonePart.toString(),
-                    imgPart = photoPart
-                )
-
-                Log.d("EditProfileVM", "updateProfile success | photo: $photoPart")
-                _updateState.value = (response)
-
-            } catch (e: Exception) {
-                Log.e("EditProfileVM", "updateProfile error: ${e.message}")
-                _updateState.postValue(UiState.Error(e.message ?: "Update failed"))
             }
+
+            val result = repository.updateProfile(
+                token = token,
+                firstName = firstName.trim(),
+                lastName = lastName.trim(),
+                phone = phone.trim(),
+                location = location.trim(),
+                imgPart = imgPart
+            )
+            _updateState.postValue(result)
         }
     }
-}
-
-private fun uriToFile(context: Context, uri: Uri): File {
-    val inputStream = context.contentResolver.openInputStream(uri)
-    val tempFile = File(context.cacheDir, "profile_${System.currentTimeMillis()}.jpg")
-    val outputStream = FileOutputStream(tempFile)
-    inputStream?.copyTo(outputStream)
-    inputStream?.close()
-    outputStream.close()
-    return tempFile
 }
