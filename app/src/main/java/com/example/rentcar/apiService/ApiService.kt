@@ -42,6 +42,7 @@ interface ApiService {
         @Part("firstname") firstName: RequestBody,
         @Part("lastname") lastName: RequestBody,
         @Part("phoneNo") phone: RequestBody,
+        @Part("location") location: RequestBody,
         @Part img: MultipartBody.Part?
     ): UpdateProfileResponse
 
