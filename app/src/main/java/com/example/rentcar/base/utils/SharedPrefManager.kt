@@ -12,6 +12,8 @@ class SharedPrefManager(context: Context) {
         private const val KEY_USER_ID = "user_id"
         private const val KEY_USER_NAME = "user_name"
         private const val KEY_USER_EMAIL = "user_email"
+        private const val KEY_USER_PHONE = "user_phone"
+        private const val KEY_USER_PROFILE_IMAGE = "user_profile_image"
         private const val KEY_IS_LOGGED_IN = "is_logged_in"
         private const val KEY_IS_FIRST_TIME = "is_first_time"
         private const val KEY_LANGUAGE = "language"
@@ -49,6 +51,14 @@ class SharedPrefManager(context: Context) {
     var userEmail: String?
         get() = prefs.getString(KEY_USER_EMAIL, null)
         set(value) = prefs.edit { putString(KEY_USER_EMAIL, value)}
+
+    var userPhone: String?
+        get() = prefs.getString(KEY_USER_PHONE, null)
+        set(value) = prefs.edit { putString(KEY_USER_PHONE, value)}
+
+    var userProfileImage: String?
+        get() = prefs.getString(KEY_USER_PROFILE_IMAGE, null)
+        set(value) = prefs.edit { putString(KEY_USER_PROFILE_IMAGE, value)}
 
     // ==================== FLAGS ====================
     var isLoggedIn: Boolean

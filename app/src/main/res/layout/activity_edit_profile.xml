@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginVertical="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_25sdp"
         android:orientation="horizontal">
 
         <ImageView
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:fontFamily="@font/generalsans_semibold"
+            android:fontFamily="@font/general_sans_semibold"
             android:includeFontPadding="false"
             android:text="@string/edit_profile"
             android:textColor="@color/white"
@@ -50,7 +50,6 @@
             android:background="@drawable/bg_login_card"
             android:orientation="vertical">
 
-            <!-- Profile Image Section -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -109,7 +108,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:includeFontPadding="false"
                         android:text="@string/first_name"
                         android:textAllCaps="true"
@@ -122,7 +121,7 @@
                         android:layout_height="@dimen/_44sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:background="@drawable/edit_text_bg"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:inputType="textPersonName"
                         android:paddingHorizontal="@dimen/_10sdp"
                         android:text="@string/johan"
@@ -142,7 +141,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:includeFontPadding="false"
                         android:text="@string/last_name"
                         android:textAllCaps="true"
@@ -155,7 +154,7 @@
                         android:layout_height="@dimen/_44sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:background="@drawable/edit_text_bg"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:inputType="textPersonName"
                         android:paddingHorizontal="@dimen/_10sdp"
                         android:text="@string/patel"
@@ -173,7 +172,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:includeFontPadding="false"
                         android:text="@string/mobile_no"
                         android:textAllCaps="true"
@@ -185,7 +184,7 @@
                         android:layout_height="@dimen/_44sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:background="@drawable/edit_text_bg"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingHorizontal="@dimen/_3sdp">
@@ -219,8 +218,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:background="@null"
-                            android:fontFamily="@font/generalsans_regular"
-                            android:hint="@string/_65656_56565"
+                            android:fontFamily="@font/general_sans_regular"
+                            android:hint="@string/enter_your_number"
                             android:inputType="phone"
                             android:textColor="@color/white"
                             android:textColorHint="@color/white"
@@ -240,7 +239,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:includeFontPadding="false"
                         android:text="@string/email"
                         android:textAllCaps="true"
@@ -253,7 +252,7 @@
                         android:layout_height="@dimen/_44sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:background="@drawable/edit_text_bg"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:inputType="textEmailAddress"
                         android:paddingHorizontal="@dimen/_10sdp"
                         android:text="@string/johanpatel123_gmail_com"
@@ -272,7 +271,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:includeFontPadding="false"
                         android:text="@string/location"
                         android:textColor="@color/white"
@@ -284,7 +283,7 @@
                         android:layout_height="@dimen/_44sdp"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:background="@drawable/edit_text_bg"
-                        android:fontFamily="@font/generalsans_regular"
+                        android:fontFamily="@font/general_sans_regular"
                         android:inputType="none"
                         android:paddingHorizontal="@dimen/_10sdp"
                         android:text="@string/surat_gujarat"
@@ -307,10 +306,20 @@
         android:background="@drawable/ic_button"
         android:gravity="center">
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:indeterminateTint="@color/themeColor"
+            android:visibility="gone" />
+
         <TextView
+            android:id="@+id/txtUpdateProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/generalsans_medium"
+            android:fontFamily="@font/general_sans_medium"
             android:gravity="center"
             android:text="@string/update_profile"
             android:textColor="@color/white"

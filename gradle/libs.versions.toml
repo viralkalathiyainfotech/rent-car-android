@@ -45,6 +45,7 @@ workRuntimeKtx = "2.11.1"
 googleGmsGoogleServices = "4.4.3"
 sdpAndroid = "1.1.1"
 activityKtx = "1.13.0"
+benchmarkCommon = "1.4.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -95,6 +96,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
 ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sdpAndroid" }
 androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
+androidx-benchmark-common = { group = "androidx.benchmark", name = "benchmark-common", version.ref = "benchmarkCommon" }
 
 
 [plugins]

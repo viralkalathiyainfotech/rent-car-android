@@ -31,22 +31,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentCar"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".ui.activity.MyBookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.auth.ChangePasswordActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="true" >
-
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter></activity>
-
-        <!--        <activity-->
-        <!--            android:name=".ui.auth.NewPasswordActivity"-->
-        <!--            android:exported="false" />-->
+            android:exported="false"></activity>
         <activity
-            android:name=".ui.auth.ForgotPasswordActivity"
+            android:name=".ui.activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- <activity -->
+        <!-- android:name=".ui.auth.NewPasswordActivity" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".ui.activity.auth.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.profile.EditProfileActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.CreateAccountActivity"
@@ -55,11 +64,13 @@
             android:name=".ui.auth.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 

@@ -7,6 +7,7 @@ import com.example.rentcar.base.ui.fragment.ExploreFleetFragment
 import com.example.rentcar.base.ui.fragment.GalleryFragment
 import com.example.rentcar.databinding.ActivityMainBinding
 import com.example.rentcar.ui.fragment.HomeFragment
+import com.example.rentcar.ui.fragment.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     companion object {
-        private const val TAG_HOME    = "TAG_HOME"
+        private const val TAG_HOME = "TAG_HOME"
         private const val TAG_EXPLORE = "TAG_EXPLORE"
         private const val TAG_GALLERY = "TAG_GALLERY"
     }
@@ -27,10 +28,23 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun initListeners() {
         binding.bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> { openFragment(HomeFragment(),    TAG_HOME);    true }
-                R.id.nav_explore     -> { openFragment(ExploreFleetFragment(), TAG_EXPLORE); true }
-                R.id.nav_gallery   -> { openFragment(GalleryFragment(), TAG_GALLERY); true }
-                else              -> false
+                R.id.nav_home -> {
+                    openFragment(HomeFragment(), TAG_HOME); true
+                }
+
+                R.id.nav_explore -> {
+                    openFragment(ExploreFleetFragment(), TAG_EXPLORE); true
+                }
+
+                R.id.nav_gallery -> {
+                    openFragment(GalleryFragment(), TAG_GALLERY); true
+                }
+
+                R.id.nav_profile -> {
+                    openFragment(ProfileFragment(), TAG_GALLERY); true
+                }
+
+                else -> false
             }
         }
     }

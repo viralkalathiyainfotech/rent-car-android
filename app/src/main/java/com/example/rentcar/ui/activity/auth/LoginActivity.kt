@@ -14,7 +14,8 @@ import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.base.utils.startActivityWithFlags
 import com.example.rentcar.databinding.ActivityLoginBinding
 import com.example.rentcar.ui.activity.MainActivity
-import dagger.hilt.android.AndroidEntryPoint   // ← add this import
+import com.example.rentcar.ui.activity.auth.ForgotPasswordActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
@@ -29,7 +30,7 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
     override fun initListeners() {
 
         binding.icLoginBtn.onClick {
-            val email    = binding.editEmail.text.toString()
+            val email = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
             viewModel.login(email, password)
         }
@@ -66,19 +67,21 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
 
                 is UiState.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
-                    binding.txtLogin.visibility    = View.GONE
-                    binding.icLoginBtn.isEnabled   = false
+                    binding.txtLogin.visibility = View.GONE
+                    binding.icLoginBtn.isEnabled = false
                 }
 
                 is UiState.Success -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.txtLogin.visibility    = View.VISIBLE
-                    binding.icLoginBtn.isEnabled   = true
+                    binding.txtLogin.visibility = View.VISIBLE
+                    binding.icLoginBtn.isEnabled = true
 
                     val user = result.data
-                    SharedPrefManager(this).token     = user.token
-                    SharedPrefManager(this).userId    = user._id
+                    SharedPrefManager(this).token = user.token
+                    SharedPrefManager(this).isLoggedIn = true
+                    SharedPrefManager(this).userId = user._id
                     SharedPrefManager(this).userEmail = user.email
+                    SharedPrefManager(this).userName = "${user.firstname} ${user.lastname}"
 
                     showToast("Welcome, ${user.firstname}!")
                     Log.d("SignIn", "${user.token} , ${user._id} , ${user.email}")
@@ -92,8 +95,8 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
 
                 is UiState.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.txtLogin.visibility    = View.VISIBLE
-                    binding.icLoginBtn.isEnabled   = true
+                    binding.txtLogin.visibility = View.VISIBLE
+                    binding.icLoginBtn.isEnabled = true
                     Log.e("LoginError", "Error: ${result.message}")
                     showToast(result.message)
                 }

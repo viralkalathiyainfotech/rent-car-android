@@ -533,7 +533,7 @@
                             android:layout_height="wrap_content"
                             android:scrollbars="none"
                             android:clipToPadding="false"
-                            android:layout_marginHorizontal="@dimen/_sdp"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
                             android:paddingStart="0dp"
                             android:paddingEnd="16dp">
 

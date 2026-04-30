@@ -1,9 +1,10 @@
-package com.example.rentcar.base.utils
+package com.example.rentcar.base.utils.dialog
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.ViewGroup
 import com.example.rentcar.base.BaseDialogFragment
+import com.example.rentcar.base.utils.onClick
 import com.example.rentcar.databinding.DialogEmailSentBinding
 
 class EmailSentDialog(
@@ -21,7 +22,7 @@ class EmailSentDialog(
 
     override fun onStart() {
         super.onStart()
-        // Make dialog background transparent so your bg_login_card shape shows properly
+
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
@@ -31,7 +32,7 @@ class EmailSentDialog(
     }
 
     override fun initViews() {
-        // Show the email the user entered
+
         binding.txtEmail.text = email
     }
 

@@ -6,7 +6,7 @@ import android.os.Looper
 import com.app.pan.book.utils.SharedPrefManager
 import com.example.rentcar.base.BaseActivity
 import com.example.rentcar.databinding.ActivitySplashActviityBinding
-import com.example.rentcar.ui.activity.auth.LoginActivity
+import com.example.rentcar.ui.auth.LoginActivity
 
 class SplashActivity :
     BaseActivity<ActivitySplashActviityBinding>(ActivitySplashActviityBinding::inflate) {
@@ -30,12 +30,10 @@ class SplashActivity :
 
         val intent = when {
             pref.isLoggedIn -> {
-
                 Intent(this, MainActivity::class.java)
             }
 
             else -> {
-
                 Intent(this, LoginActivity::class.java)
             }
         }

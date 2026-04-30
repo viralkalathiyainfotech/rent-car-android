@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_7sdp"
-            android:background="@drawable/bg_badge_orange"
+            android:background="@drawable/bg_btn_orange"
             android:fontFamily="@font/general_sans_semibold"
             android:letterSpacing="0.08"
             android:paddingStart="5dp"
