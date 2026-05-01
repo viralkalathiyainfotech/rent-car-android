@@ -3,6 +3,7 @@ package com.example.rentcar.repository
 import android.util.Log
 import com.example.rentcar.apiService.ApiService
 import com.example.rentcar.base.utils.UiState
+import com.example.rentcar.model.CreateRatingResponse
 import com.example.rentcar.model.MyBookingResponseItem
 import com.example.rentcar.model.UpdateProfileResponse
 import com.example.rentcar.model.home.BrandResponseModel
@@ -16,7 +17,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import javax.inject.Inject
 
-class UserRepository @Inject constructor( private val apiService: ApiService){
+class UserRepository @Inject constructor(private val apiService: ApiService) {
     suspend fun loginUser(email: String, password: String): LoginResponse {
         val credentials = mapOf(
             "email" to email,
@@ -34,12 +35,12 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
         password: String
     ): RegisterResponseModel {
         val requestBody = mapOf(
-            "firstname"  to firstname,
-            "lastname"   to lastname,
-            "email"      to email,
-            "phone"      to phone,
-            "licenceNo"  to licenceNo,
-            "password"   to password
+            "firstname" to firstname,
+            "lastname" to lastname,
+            "email" to email,
+            "phone" to phone,
+            "licenceNo" to licenceNo,
+            "password" to password
         )
         return apiService.registerUser(requestBody)
     }
@@ -69,16 +70,18 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
             UiState.Error(e.message ?: "Network error")
         }
     }
+
     suspend fun forgotPassword(email: String): ForgotPasswordResponse {
         val request = mapOf("email" to email)
         return apiService.forgotPassword(request)
     }
+
     suspend fun updateProfile(
         token: String,
         firstName: String,
         lastName: String,
         phone: String,
-        location : String,
+        location: String,
         imgPart: MultipartBody.Part?
     ): UiState<UpdateProfileResponse> {
         return try {
@@ -117,7 +120,7 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
             "newPassword" to newPassword,
             "confirmPassword" to confirmPassword
         )
-        return apiService.changePassword("Bearer $token" , request)
+        return apiService.changePassword("Bearer $token", request)
     }
 
     suspend fun getMyBookings(token: String): UiState<List<MyBookingResponseItem>> {
@@ -127,6 +130,28 @@ class UserRepository @Inject constructor( private val apiService: ApiService){
                 UiState.Success(response.body()!!)
             } else {
                 UiState.Error(response.message() ?: "Something went wrong")
+            }
+        } catch (e: Exception) {
+            UiState.Error(e.message ?: "Network error")
+        }
+    }
+
+    suspend fun createRating(
+        carId: String,
+        bookingId: String,
+        rating: Int
+    ): UiState<CreateRatingResponse> {
+        return try {
+            val request = mapOf(
+                "carId" to carId,
+                "bookingId" to bookingId,
+                "rating" to rating
+            )
+            val response = apiService.createRating(request)
+            if (response.isSuccessful && response.body() != null) {
+                UiState.Success(response.body()!!)
+            } else {
+                UiState.Error(response.message() ?: "Failed to submit rating")
             }
         } catch (e: Exception) {
             UiState.Error(e.message ?: "Network error")

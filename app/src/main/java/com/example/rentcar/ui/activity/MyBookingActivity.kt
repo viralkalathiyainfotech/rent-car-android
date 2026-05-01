@@ -18,11 +18,21 @@ class MyBookingActivity : BaseVMActivity<ActivityMyBookingBinding, MyBookingView
 ) {
 
     private val adapter by lazy {
-        MyBookingAdapter { booking ->
-            BookingDetailDialog
-                .newInstance(booking)
-                .show(supportFragmentManager, BookingDetailDialog.TAG)
-        }
+        MyBookingAdapter(
+            onViewDetails = { booking ->
+                BookingDetailDialog
+                    .newInstance(booking)
+                    .show(supportFragmentManager, BookingDetailDialog.TAG)
+            },
+            onRatingChanged = { booking, rating ->
+
+                viewModel.submitRating(
+                    carId = booking.car.id,
+                    bookingId = booking.id,
+                    rating = rating
+                )
+            }
+        )
     }
 
     override fun initViews() {
@@ -62,6 +72,21 @@ class MyBookingActivity : BaseVMActivity<ActivityMyBookingBinding, MyBookingView
                 is UiState.Error -> {
                     binding.progressBar.visibility = View.GONE
                     binding.rvMyBooking.visibility = View.VISIBLE
+                    showToast(result.message)
+                }
+            }
+        }
+
+        viewModel.ratingState.observe(this) { result ->
+            when (result) {
+                is UiState.Loading -> {
+                }
+
+                is UiState.Success -> {
+                    showToast("Rating submitted successfully!")
+                }
+
+                is UiState.Error -> {
                     showToast(result.message)
                 }
             }

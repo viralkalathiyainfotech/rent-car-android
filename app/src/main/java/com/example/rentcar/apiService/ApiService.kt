@@ -1,5 +1,6 @@
 package com.example.rentcar.apiService
 
+import com.example.rentcar.model.CreateRatingResponse
 import com.example.rentcar.model.MyBookingResponseItem
 import com.example.rentcar.model.UpdateProfileResponse
 import com.example.rentcar.model.home.BrandResponseModel
@@ -56,5 +57,11 @@ interface ApiService {
     suspend fun getMyBookings(
         @Header("Authorization") token: String
     ): Response<List<MyBookingResponseItem>>
+
+    @RequiresAuth
+    @POST("api/ratings")
+    suspend fun createRating(
+        @Body request: Map<String, @JvmSuppressWildcards Any>
+    ): Response<CreateRatingResponse>
 
 }

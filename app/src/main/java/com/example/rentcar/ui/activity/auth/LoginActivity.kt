@@ -14,6 +14,7 @@ import com.example.rentcar.base.utils.startActivityNormal
 import com.example.rentcar.base.utils.startActivityWithFlags
 import com.example.rentcar.databinding.ActivityLoginBinding
 import com.example.rentcar.ui.activity.MainActivity
+import com.example.rentcar.ui.activity.auth.ForgotPasswordActivity
 import dagger.hilt.android.AndroidEntryPoint   // ← add this import
 
 @AndroidEntryPoint

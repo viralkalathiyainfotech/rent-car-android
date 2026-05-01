@@ -232,7 +232,7 @@
                     android:includeFontPadding="false"
                     android:text="@string/sign_in"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_16ssp" />
+                    android:textSize="@dimen/_14ssp" />
             </LinearLayout>
 
 

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/general_sans_medium"
                     android:includeFontPadding="false"
-                    android:text="Lamborghini Huracán EVO123"
+                    android:text="@string/lamborghini_hurac_n_evo123"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
@@ -51,7 +52,7 @@
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/general_sans_regular"
                     android:includeFontPadding="false"
-                    android:text="Total Amount"
+                    android:text="@string/total_amount"
                     android:textColor="@color/themeLightText"
                     android:textSize="@dimen/_10ssp" />
             </RelativeLayout>
@@ -71,7 +72,7 @@
                     android:fontFamily="@font/general_sans_medium"
                     android:includeFontPadding="false"
                     android:padding="@dimen/_4sdp"
-                    android:text="135C4E"
+                    android:text="@string/_135c4e"
                     android:textColor="@color/orange"
                     android:textSize="@dimen/_10ssp" />
 
@@ -82,7 +83,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:includeFontPadding="false"
-                    android:text="$900"
+                    android:text="@string/_900"
                     android:textColor="#FF8C2A"
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold" />
@@ -104,6 +105,7 @@
                     android:layout_width="@dimen/_15sdp"
                     android:layout_height="@dimen/_15sdp"
                     android:layout_gravity="center"
+                    android:contentDescription="@string/todo"
                     android:src="@drawable/ic_calander" />
 
                 <LinearLayout
@@ -118,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/general_sans_regular"
                         android:includeFontPadding="false"
-                        android:text="PICKUP DATE"
+                        android:text="@string/pickup_date"
                         android:textColor="@color/themeLightText"
                         android:textSize="@dimen/_9ssp" />
 
@@ -128,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/general_sans_medium"
                         android:includeFontPadding="false"
-                        android:text="4/24/2026"
+                        android:text="@string/_4_24_2026"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_10ssp" />
                 </LinearLayout>
@@ -143,6 +145,7 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/todo"
                         android:src="@drawable/ic_calander" />
 
                     <LinearLayout
@@ -194,7 +197,6 @@
                     android:id="@+id/btnViewDetails"
                     android:layout_width="@dimen/_65sdp"
                     android:layout_height="@dimen/_20sdp"
-                    android:layout_below="@id/ll_main"
                     android:background="@drawable/ic_button"
                     android:gravity="center">
 
@@ -209,18 +211,22 @@
                         android:textSize="@dimen/_10ssp" />
                 </LinearLayout>
 
-
-                <androidx.appcompat.widget.AppCompatRatingBar
-                    android:id="@+id/ratingBar"
-                    style="@style/Widget.AppCompat.RatingBar.Small"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:numStars="5"
-                    android:progressBackgroundTint="@color/white"
-                    android:progressTint="@color/orange"
-                    android:rating="3"
-                    android:secondaryProgressTint="@android:color/transparent" />
+                    android:layout_height="wrap_content">
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:numStars="5"
+                        android:progressTint="@color/orange"
+                        android:rating="0"
+                        android:stepSize="1" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

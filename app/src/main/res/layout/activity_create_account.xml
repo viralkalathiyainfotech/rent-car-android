@@ -458,7 +458,7 @@
                         android:includeFontPadding="false"
                         android:text="Create Account"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_16ssp" />
+                        android:textSize="@dimen/_14ssp" />
 
                 </LinearLayout>
 

@@ -8,25 +8,13 @@ data class MyBookingResponse(
     val myBookingResponse: List<MyBookingResponseItem>
 )
 
-data class Specs(
-
-    @field:SerializedName("acceleration")
-    val acceleration: String,
-
-    @field:SerializedName("transmission")
-    val transmission: String,
-
-    @field:SerializedName("fuel")
-    val fuel: String,
-
-    @field:SerializedName("seating")
-    val seating: String
-)
-
 data class MyBookingResponseItem(
 
     @field:SerializedName("paymentPercentage")
     val paymentPercentage: Int,
+
+    @field:SerializedName("rating")
+    val rating: Int,
 
     @field:SerializedName("returnTime")
     val returnTime: String,
@@ -70,14 +58,14 @@ data class MyBookingResponseItem(
     @field:SerializedName("paymentStatus")
     val paymentStatus: String,
 
-    @field:SerializedName("stripeSessionId")
-    val stripeSessionId: String,
-
     @field:SerializedName("status")
     val status: String,
 
     @field:SerializedName("updatedAt")
-    val updatedAt: String
+    val updatedAt: String,
+
+    @field:SerializedName("stripeSessionId")
+    val stripeSessionId: String
 )
 
 data class Car(
@@ -126,4 +114,19 @@ data class Car(
 
     @field:SerializedName("updatedAt")
     val updatedAt: String
+)
+
+data class Specs(
+
+    @field:SerializedName("acceleration")
+    val acceleration: String,
+
+    @field:SerializedName("transmission")
+    val transmission: String,
+
+    @field:SerializedName("fuel")
+    val fuel: String,
+
+    @field:SerializedName("seating")
+    val seating: String
 )
