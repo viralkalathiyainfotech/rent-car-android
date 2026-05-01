@@ -1,10 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/themeColor"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:scrollbars="none">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:src="@drawable/ic_star"
+            app:tint="#FFE07B2B" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/general_sans_semibold"
+            android:includeFontPadding="false"
+            android:text="4"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:fontFamily="@font/general_sans_medium"
+            android:includeFontPadding="false"
+            android:text="(3 reviews)"
+            android:textColor="#AAFFFFFF"
+            android:textSize="@dimen/_11ssp" />
+
+        <View
+            android:layout_width="@dimen/_3sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:background="#55FFFFFF" />
+
+        <ImageView
+            android:layout_width="@dimen/_11sdp"
+            android:layout_height="@dimen/_11sdp"
+            android:src="@drawable/ic_location"
+            app:tint="#FFE07B2B" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/general_sans_medium"
+            android:includeFontPadding="false"
+            android:text="Surat, Gujarat"
+            android:textColor="#AAFFFFFF"
+            android:textSize="@dimen/_11ssp" />
+
+        <View
+            android:layout_width="@dimen/_3sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:background="#55FFFFFF" />
+
+        <ImageView
+            android:layout_width="@dimen/_11sdp"
+            android:layout_height="@dimen/_11sdp"
+            android:src="@drawable/ic_verified"
+            app:tint="#FFE07B2B" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/general_sans_medium"
+            android:includeFontPadding="false"
+            android:text="Top Rated Choice"
+            android:textColor="#AAFFFFFF"
+            android:textSize="@dimen/_11ssp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_vehicle_card"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:src="@drawable/ic_acceleration"
+                app:tint="#FFE07B2B" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/general_sans_semibold"
+                android:includeFontPadding="false"
+                android:text="2.9 SEC"
+                android:gravity="center"
+                android:textColor="#FFFFFFFF"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/general_sans_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.05"
+                android:text="0-100 KM/H"
+                android:textColor="#66FFFFFF"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_vehicle_card"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:src="@drawable/ic_transmission"
+                app:tint="#FFE07B2B" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/general_sans_semibold"
+                android:includeFontPadding="false"
+                android:text="AUTOMATIC"
+                android:textColor="#FFFFFFFF"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/general_sans_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.05"
+                android:text="TRANSMISSION"
+                android:textColor="#66FFFFFF"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_vehicle_card"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:src="@drawable/ic_seat"
+                app:tint="#FFE07B2B" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/general_sans_semibold"
+                android:includeFontPadding="false"
+                android:text="2 SEATER"
+                android:textColor="#FFFFFFFF"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/general_sans_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.05"
+                android:text="SEATING"
+                android:textColor="#66FFFFFF"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_vehicle_card"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:src="@drawable/ic_fuel"
+                app:tint="#FFE07B2B" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/general_sans_semibold"
+                android:includeFontPadding="false"
+                android:text="PETROL"
+                android:textColor="#FFFFFFFF"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/general_sans_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.05"
+                android:text="FUEL TYPE"
+                android:textColor="#66FFFFFF"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

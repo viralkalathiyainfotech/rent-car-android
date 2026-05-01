@@ -32,6 +32,9 @@
         android:theme="@style/Theme.RentCar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.activity.CarDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.MyBookingActivity"
             android:exported="false" />
         <activity
@@ -39,7 +42,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.activity.SplashActivity"
             android:exported="true">
@@ -61,7 +64,7 @@
         <activity
             android:name=".ui.auth.LoginActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

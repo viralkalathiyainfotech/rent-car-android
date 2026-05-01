@@ -77,6 +77,7 @@ class LoginActivity : BaseVMActivity<ActivityLoginBinding, LoginViewModel>(
 
                     val user = result.data
                     SharedPrefManager(this).token     = user.token
+                    SharedPrefManager(this).isLoggedIn = true
                     SharedPrefManager(this).userId    = user._id
                     SharedPrefManager(this).userEmail = user.email
 

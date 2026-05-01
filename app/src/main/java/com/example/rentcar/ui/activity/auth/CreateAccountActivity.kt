@@ -4,6 +4,7 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
+import com.app.pan.book.utils.SharedPrefManager
 import com.example.rentcar.R
 import com.example.rentcar.base.BaseVMActivity
 import com.example.rentcar.base.utils.UiState
@@ -97,6 +98,7 @@ class CreateAccountActivity :
                     binding.progressBar.visibility = View.GONE
                     binding.icRegisterBtn.visibility = View.VISIBLE
                     binding.icLoginBtn.isEnabled = true
+                    SharedPrefManager(this).isLoggedIn = true
                     Log.e("LoginSuccess", "Error: ${result.data}")
 
                     showToast("Account created successfully!")

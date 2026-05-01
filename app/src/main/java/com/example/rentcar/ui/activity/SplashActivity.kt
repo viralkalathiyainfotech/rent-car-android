@@ -32,12 +32,10 @@ class SplashActivity :
             pref.isLoggedIn -> {
                 Intent(this, MainActivity::class.java)
             }
-
             else -> {
                 Intent(this, LoginActivity::class.java)
             }
         }
-
         startActivity(intent)
         finish()
     }

@@ -42,7 +42,6 @@ class EditProfileViewModel @Inject constructor(
         location: String,
         imageUri: Uri?
     ) {
-        // ── Validation ────────────────────────────────────
         if (firstName.isBlank()) {
             _updateState.value = UiState.Error("First name is required")
             return
